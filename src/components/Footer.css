@@ -1,0 +1,18 @@
+/* src/components/Footer.css */
+footer {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  footer h2, footer h5 {
+    margin-bottom: 15px;
+  }
+  
+  footer .text-light {
+    color: #f8f9fa !important;
+  }
+  
+  footer a:hover {
+    color: #007bff;
+  }
+  
