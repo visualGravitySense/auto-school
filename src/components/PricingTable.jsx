@@ -16,7 +16,7 @@ function AntiDesignTable() {
 
     <>
 
-    <h2 className="text-2xl font-bold text-center mb-4 mt-4  text-black">Сравнение тарифов</h2>
+    <h2 className="text-2xl font-bold text-center mb-4 mt-4  text-black">Цены</h2>
 
     <Table className="anti-table">
       <thead>
