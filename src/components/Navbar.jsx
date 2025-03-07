@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
@@ -13,6 +14,16 @@ const Navbar = () => {
             <li className="nav-item"><Link className="nav-link" to="/contact">Контакты</Link></li>
           </ul>
         </div>
+
+        <div>
+          <a href="https://t.me/yourtelegram" className="text-light " aria-label="Telegram">
+              <FaTelegramPlane size={30} />
+          </a>
+          <a href="https://wa.me/yourwhatsapp" className="text-light mx-3" aria-label="WhatsApp">
+              <FaWhatsapp size={30} />
+          </a>
+        </div>
+          
       </div>
     </nav>
   );

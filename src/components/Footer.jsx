@@ -106,6 +106,7 @@ const Footer = () => {
             <Col md={4}>
                 <h3>Меню</h3>
                 <Nav className="flex-column">
+                <Nav.Link href="/">Главная</Nav.Link>
                 <Nav.Link href="/courses">Курсы</Nav.Link>
                 <Nav.Link href="/about">О нас</Nav.Link>
                 <Nav.Link href="/contact">Контакты</Nav.Link>

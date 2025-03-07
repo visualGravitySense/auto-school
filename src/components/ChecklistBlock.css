@@ -1,0 +1,33 @@
+.checklist-block {
+    background-color: #f9f9f9; /* Light background for the section */
+    padding: 50px 0;
+  }
+  
+  .checklist-block h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .checklist-block .list-group-item {
+    font-size: 1.1rem;
+    color: #555;
+    border: none;
+    padding: 12px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .checklist-block .list-group-item:hover {
+    background-color: #e9ecef;
+  }
+  
+  .checklist-block img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .checklist-block .btn {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+  
