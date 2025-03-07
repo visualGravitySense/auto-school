@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   return (
@@ -14,6 +15,10 @@ const Navbar = () => {
             <li className="nav-item"><Link className="nav-link" to="/price">Цены</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/contact">Контакты</Link></li>
           </ul>
+
+          <button onClick={() => i18n.changeLanguage('et')}>ee</button>
+          <button onClick={() => i18n.changeLanguage('en')}>ru</button>
+
         </div>
 
         <div>
