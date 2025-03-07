@@ -16,12 +16,12 @@ const Navbar = () => {
         </div>
 
         <div>
-          <a href="https://t.me/yourtelegram" className="text-light " aria-label="Telegram">
-              <FaTelegramPlane size={30} />
-          </a>
-          <a href="https://wa.me/yourwhatsapp" className="text-light mx-3" aria-label="WhatsApp">
-              <FaWhatsapp size={30} />
-          </a>
+        <a href="https://t.me/yourtelegram" className="text-primary" aria-label="Telegram">
+          <FaTelegramPlane size={20} />
+        </a>
+        <a href="https://wa.me/yourwhatsapp" className="text-success mx-3" aria-label="WhatsApp">
+          <FaWhatsapp size={20} />
+        </a>
         </div>
           
       </div>
