@@ -110,7 +110,7 @@ const Footer = () => {
                 <Nav.Link href="/courses">Курсы</Nav.Link>
                 <Nav.Link href="/about">О нас</Nav.Link>
                 <Nav.Link href="/contact">Контакты</Nav.Link>
-                <Nav.Link href="/blog">Блог</Nav.Link>
+                {/* <Nav.Link href="/blog">Блог</Nav.Link> */}
                 </Nav>
             </Col>
 

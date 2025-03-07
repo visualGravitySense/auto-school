@@ -1,0 +1,57 @@
+.anti-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Courier New", monospace;
+    background: #111;
+    color: #0ff; /* Неоновый цвет текста */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    /* box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .anti-table th,
+  .anti-table td {
+    border: 2px dashed #00ffff; /* Рваные границы */
+    padding: 12px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .anti-table thead {
+    background: linear-gradient(5deg, #ff00ff, #00ffff);
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .anti-table tbody tr:hover {
+    background: #ff00ff;
+    color: #ffffff;
+    /* transform: scale(1.01); */
+    /* transition: 0.2s ease-in-out; */
+  }
+  
+  .anti-table tbody td:hover {
+    background: #0d6efd;
+    color: #ffffff;
+    /* transform: rotate(-1deg); */
+  }
+  
+  /* @keyframes glitch {
+    0% {
+      text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff;
+    }
+    50% {
+      text-shadow: -2px -2px 0px #ff00ff, 2px 2px 0px #00ffff;
+    }
+    100% {
+      text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff;
+    }
+  } */
+  
+  /* .anti-table tbody tr:hover td {
+    animation: glitch 0.5s infinite alternate;
+  } */
+  
