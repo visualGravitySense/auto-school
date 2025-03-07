@@ -9,6 +9,7 @@ const Navbar = () => {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item"><Link className="nav-link" to="/">Главная</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/courses">Курсы</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/about">О нас</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/contact">Контакты</Link></li>
           </ul>
         </div>

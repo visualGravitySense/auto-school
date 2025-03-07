@@ -1,4 +1,8 @@
 import GiftCard from "../components/GiftCard"
+import Advantages from "../components/Advantages"
+import TariffComparison from "../components/TariffComparison"
+import Testimonials from "../components/Testimonials"
+import Footer from "../components/Footer"
 
 const Home = () => {
     return (
@@ -10,6 +14,12 @@ const Home = () => {
             </div>
 
             <GiftCard />
+
+            <Advantages />
+
+            <TariffComparison />
+
+            <Testimonials />
 
         </>
     );
