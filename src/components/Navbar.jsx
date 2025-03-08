@@ -2,14 +2,23 @@ import { Link } from "react-router-dom";
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
+
+
 const Navbar = () => {
-  const { t, i18n } = useTranslation(); // Инициализация перевода
+  const { t, i18n } = useTranslation(); 
+  // const { t } = useTranslation();
+
+  const handleLanguageChange = (lang) => {  
+    i18n.changeLanguage(lang);  // This changes the language
+  };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      
       <div className="container">
         <Link className="navbar-brand" to="/">Viktorija</Link>
         <div className="collapse navbar-collapse">
+          {/* <a href="/">{t("navbar.home")}</a> */}
           <ul className="navbar-nav ms-auto">
             <li className="nav-item"><Link className="nav-link" to="/">{t('navbar.home')}</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/courses">{t('navbar.courses')}</Link></li>
@@ -19,8 +28,10 @@ const Navbar = () => {
           </ul>
 
           {/* Переключение языков */}
-          <button onClick={() => i18n.changeLanguage('et')} className="btn btn-outline-light mx-2">EE</button>
-          <button onClick={() => i18n.changeLanguage('ru')} className="btn btn-outline-light">RU</button>
+          <button onClick={() => handleLanguageChange('et')}>ee</button>
+          <button onClick={() => handleLanguageChange('ru')}>ru</button>
+          {/* <button onClick={() => i18n.changeLanguage('et')} className="btn btn-outline-light mx-2">EE</button>
+          <button onClick={() => i18n.changeLanguage('ru')} className="btn btn-outline-light">RU</button> */}
         </div>
 
         <div>
