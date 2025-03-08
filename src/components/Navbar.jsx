@@ -2,14 +2,19 @@ import { Link } from "react-router-dom";
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
-
-
 const Navbar = () => {
   const { t, i18n } = useTranslation(); 
   // const { t } = useTranslation();
 
+  // const handleLanguageChange = (lang) => {  
+  //   i18n.changeLanguage(lang);  // This changes the language
+  //   localStorage.setItem("i18nextLng", lang); // Сохраняем язык
+  // };
+
   const handleLanguageChange = (lang) => {  
-    i18n.changeLanguage(lang);  // This changes the language
+    console.log("Меняем язык на:", lang); // ✅ Проверка в консоли
+    i18n.changeLanguage(lang);
+    localStorage.setItem("i18nextLng", lang);
   };
 
   return (
@@ -28,8 +33,9 @@ const Navbar = () => {
           </ul>
 
           {/* Переключение языков */}
-          <button onClick={() => handleLanguageChange('et')}>ee</button>
-          <button onClick={() => handleLanguageChange('ru')}>ru</button>
+          <button onClick={() => handleLanguageChange('en')}>ee</button>
+          <button onClick={() => handleLanguageChange('et')}>ru</button>
+          {/* <button onClick={() => handleLanguageChange('ru')}>ru</button> */}
           {/* <button onClick={() => i18n.changeLanguage('et')} className="btn btn-outline-light mx-2">EE</button>
           <button onClick={() => i18n.changeLanguage('ru')} className="btn btn-outline-light">RU</button> */}
         </div>

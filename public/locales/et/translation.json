@@ -1,9 +1,9 @@
 {
   "navbar": {
-    "home": "Avaleht",
-    "courses": "Kursused",
-    "about": "Meist",
-    "price": "Hinnad",
-    "contact": "Kontakt"
+    "home": "Главная",
+    "courses": "Курсы",
+    "about": "О нас",
+    "price": "Цены",
+    "contact": "Контакты"
   }
 }
