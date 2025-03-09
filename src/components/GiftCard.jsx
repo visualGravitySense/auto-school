@@ -37,14 +37,15 @@ const GiftCard = () => {
       const invoiceDoc = await getDoc(doc(db, "invoices", invoiceRef.id));
       setInvoice({ id: invoiceDoc.id, ...invoiceDoc.data() });
 
-      alert("Payment successeful! Account is created.");
-      setAmount("");
+      // alert("Payment successeful! Account is created.");
+      setAmount("500");
     } catch (error) {
       console.error("Error with payment creation:", error);
       alert("Error with payment processing")
     }
 
     setIsLoading(false);
+    // setAmount("500");
   };
 
   return (
