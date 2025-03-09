@@ -1,4 +1,4 @@
-// src/components/Footer.jsx
+ // src/components/Footer.jsx
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Nav } from 'react-bootstrap';
 import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
@@ -6,27 +6,11 @@ import logo from '../assets/viktorija-logo.png'; // Путь к вашему л�
 import "./Footer.css"
 
 import MessengerRow from './MessengerRow';
+import PaymentsContactForm from './PaymentsContactForm';
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Здесь можно добавить логику отправки формы
-    console.log(formData);
-  };
 
   return (
     <footer className="py-5 bg-dark text-light">
@@ -37,59 +21,23 @@ const Footer = () => {
 
         <MessengerRow />
 
-      <Container>
-        <Row className="mb-4">
-          <Col md={6}>
+        <Container>
+          <Row className="mb-4">
+            <Col md={6}>
 
-          <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="formName">
-                <Form.Label>Ваше имя</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Введите ваше имя"
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="formEmail">
-                <Form.Label>Ваш Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Введите ваш Email"
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="formMessage">
-                <Form.Label>Ваше сообщение</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Введите ваше сообщение"
-                  required
-                />
-              </Form.Group>
-              <Button variant="primary" type="submit">Отправить</Button>
-            </Form>
-                
-          </Col>
-          <Col md={6}>
+              <PaymentsContactForm />
+                  
+            </Col>
+            <Col md={6}>
 
-            <div className="w-40 h-40 rounded-lg">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg" alt="Education" className="w-full h-full object-cover rounded-lg" />
-                </div>
-            
-          </Col>
-        </Row>
+              <div className="w-40 h-40 rounded-lg">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg" alt="Education" className="w-full h-full object-cover rounded-lg" />
+                  </div>
+            </Col>
+          </Row>
 
-        
-      </Container>
+          
+        </Container>
 
       {/* <section className="py-5 bg-dark text-light"> */}
         <Container>

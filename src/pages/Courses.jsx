@@ -3,6 +3,7 @@ import CoursesList from "../components/CoursesList"
 import ChecklistBlock from "../components/ChecklistBlock"
 import FAQBlock from "../components/FAQBlock"
 import ScheduleBlock from "../components/ScheduleBlock"
+import ContactForm from "../components/ContactForm"
 
 const heroData = {
   title: 'Наши Премиум Услуги',
@@ -66,6 +67,8 @@ const scheduleData = [
         <HeroBlock {...heroData} />
 
         <CoursesList courses={courses} />
+
+        <ContactForm />
 
         <ChecklistBlock />
 
