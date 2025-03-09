@@ -85,9 +85,9 @@ const About = () => {
 
             <HistoryBlock {...historyData} />
 
-            <CarParkBlock cars={carData} />
-
             <InstructorsBlock instructors={instructorsData} />
+
+            <CarParkBlock cars={carData} />
 
             <PhotoGallery images={galleryImages} />
         

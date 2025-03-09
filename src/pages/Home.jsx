@@ -9,7 +9,7 @@ import HeroBlock from "../components/HeroBlock"
 const heroData = {
     title: 'Добро пожаловать в нашу автошколу!',
     description: 'Получите права быстро и легко с нашими курсами!',
-    buttonText: 'Смотреть курсы',
+    buttonText: 'Записаться на курс ',
     buttonLink: '#services',
     imageUrl: '/images/services.jpg',
   };
