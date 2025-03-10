@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Advantages = () => {
+    const { t, i18n } = useTranslation();
+    
     const advantagesLeft = [
         { icon: "🚀", title: "Быстрое обучение", description: "Освойте навыки за короткий срок." },
         { icon: "🎓", title: "Лучшие преподаватели", description: "Обучение у профессионалов." },

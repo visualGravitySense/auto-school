@@ -51,5 +51,79 @@
     "first_aid": "Esmaabi kursused",
     "dark_slippery": "Pimedad ja libedad sõidurajad",
     "winter_driving": "Talvised sõidukursused (loa asendamiseks)"
+  },
+  "giftCard": {
+    "title": "Parim kingitus on teadmised!",
+    "subtitle": "Sõpradele, pereliikmetele ja kolleegidele",
+    "chooseAmount": "Vali summa",
+    "steps": "Vali summa → Sisesta andmed → Maksmine",
+    "preview": "Tšeki eelvaade",
+    "howItLooks": "Kuidas see välja näeb",
+    "invoice": "Arve",
+    "amount": "Summa",
+    "date": "Kuupäev",
+    "reviews": "Õpilaste arvustused"
+  },
+  "advantages": {
+    "title": "Meie eelised",
+    "subtitle": "Miks valida meid?",
+    "items": [
+      { "title": "Kiire õpe", "description": "Omandage oskused lühikese ajaga." },
+      { "title": "Parimad õpetajad", "description": "Õppimine professionaalide juhendamisel." },
+      { "title": "Praktiline kasu", "description": "Hankige nõutud oskused." },
+      { "title": "Saadaval veebis", "description": "Õppige igal ajal ja igas kohas." }
+    ]
+  },
+  "tarifComparison": {
+    "title": "Paketivõrdlus",
+    "plans": ["Põhipakett", "Optimaalne", "Premium"],
+    "features": ["Tundide arv", "Veebiteooria", "Individuaalne juhendaja", "Eksamil osalemine", "Hind"]
+  },
+  "testimonials": {
+    "title": "Õpilaste tõelised lood",
+    "reviews": [
+      { "text": "Suurepärane autokool, suurepärased õpetajad.", "author": "Uliana Zõkova" },
+      { "text": "Kõik on hästi ja selgelt selgitatud.", "author": "Sergei" },
+      { "text": "Väga rahul, et õppisin just selles autokoolis!", "author": "Aisel Agaeva" }
+    ]
+  },
+  "about": {
+    "title": "18 aastat kindluse saavutamiseks roolis",
+    "description": "4500 lõpetajat. Professionaalsus. Tulemused.",
+    "cars": [
+      { "model": "Toyota Corolla", "engine": "1.8 L, 140 hj", "transmission": "Automaat", "fuel": "Bensiin" },
+      { "model": "Toyota Corolla", "engine": "1.6 L, 110 hj", "transmission": "Manuaal", "fuel": "Diisel" },
+      { "model": "Toyota Corolla", "engine": "1.6 L, 123 hj", "transmission": "Automaat", "fuel": "Bensiin" }
+    ],
+    "instructors": [
+      { "name": "Ivan Petrov", "experience": 10 },
+      { "name": "Maria Sidorova", "experience": 8 },
+      { "name": "Aleksandr Kuznetsov", "experience": 12 }
+    ]
+  },
+  "class": {
+    "nameTheory": "Teooriakursus klassis",
+    "infoTheory": "Kontaktõpe koos õpetajaga",
+  
+    "nameOnline": "Veebiõpe",
+    "infoOnline": "Juurdepääs veebimaterjalidele",
+  
+    "nameManual": "Sõidukursus (manuaal)",
+    "infoManual": "Manuaalkäigukastiga sõiduk",
+  
+    "nameAutomat": "Sõidukursus (automaat)",
+    "infoAutomat": "Automaatkäigukastiga sõiduk",
+  
+    "nameMedic": "Esmaabikursus",
+    "infoMedic": "Esmaabi põhitõed",
+  
+    "nameWinter": "Pimedas ja libedal sõitmise kursus",
+    "infoWinter": "Sõitmine keerulistes tingimustes",
+  
+    "nameLast": "Talvesõidukursus",
+    "infoLast": "Kohustuslik kursus juhilubade pikendamiseks"
+  },
+  "contact": {
+    "title": "Võtke meiega ühendust"
   }
 }

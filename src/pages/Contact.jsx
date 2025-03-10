@@ -1,13 +1,11 @@
 import ContactBlock from "../components/ContactBlock"
 import HeroBlock from "../components/HeroBlock"
+import PaymentsContactForm from "../components/PaymentsContactForm"
 import { Row, Col } from 'react-bootstrap';
 import ImageGrid from "../components/ImageGrid"
 
 const heroData = {
-  title: 'Добро пожаловать в нашу автошколу!',
-  description: 'Получите права быстро и легко с нашими курсами!',
-  buttonText: 'Смотреть курсы',
-  buttonLink: '#services',
+  
   imageUrl: '/images/services.jpg',
 };
 
@@ -23,8 +21,12 @@ const Contact = () => {
           
           <Col md={6}>
             <div className="container mt-5">
-              <h2>Свяжитесь с нами</h2>
-              <form>
+              <h2>{t('contact.title')}</h2>
+              {/* <h2>Свяжитесь с нами</h2> */}
+
+              <PaymentsContactForm />
+
+              {/* <form>
                 <div className="mb-3">
                   <label className="form-label">Ваше имя</label>
                   <input type="text" className="form-control" required />
@@ -34,7 +36,7 @@ const Contact = () => {
                   <input type="email" className="form-control" required />
                 </div>
                 <button type="submit" className="btn btn-success">Отправить</button>
-              </form>
+              </form> */}
             </div>
           </Col>
 
@@ -48,4 +50,3 @@ const Contact = () => {
   };
   
   export default Contact;
-  

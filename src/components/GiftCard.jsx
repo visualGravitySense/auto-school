@@ -2,8 +2,11 @@ import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
 
+import { useTranslation } from 'react-i18next';
 
 const GiftCard = () => {
+  const { t, i18n } = useTranslation();
+
   const [amount, setAmount] = useState(500);
   const [isLoading, setIsLoading] = useState(false);
   const [invoice, setInvoice] = useState(null);
@@ -92,7 +95,7 @@ const GiftCard = () => {
           <div className="w-12 h-12 bg-white rounded-full"></div>
           <div className="w-12 h-12 bg-white rounded-full"></div>
         </div>
-        <p className="text-sm mt-1">Short Text Short Text Short Text</p>
+        {/* <p className="text-sm mt-1">Short Text Short Text Short Text</p> */}
       </div>
     </div>
   );

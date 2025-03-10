@@ -4,13 +4,13 @@ import CarParkBlock from "../components/CarParkBlock"
 import InstructorsBlock from "../components/InstructorsBlock"
 import PhotoGallery from "../components/PhotoGallery"
 
-const heroData = {
-    title: 'Научитесь водить уверенно и безопасно с нами',
-    description: 'Профессиональные инструкторы и современный подход для водителей любого уровня',
-    buttonText: 'Записаться на курс по вождению',
-    buttonLink: '#services',
-    imageUrl: '/images/services.jpg',
-  };
+// const heroData = {
+//     title: 'Научитесь водить уверенно и безопасно с нами',
+//     description: 'Профессиональные инструкторы и современный подход для водителей любого уровня',
+//     buttonText: 'Записаться на курс по вождению',
+//     buttonLink: '#services',
+//     imageUrl: '/images/services.jpg',
+//   };
 
 const historyData = {
     title: '18 лет на пути к вашей уверенности за рулём',
