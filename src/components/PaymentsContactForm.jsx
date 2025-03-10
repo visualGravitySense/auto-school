@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
+import { useTranslation } from 'react-i18next';
 
 const PaymentsContactForm = () => {
+    const { t, i18n } = useTranslation(); 
 
     const [formType, setFormType] = useState("enroll"); // "question" или "enroll"
     const [name, setName] = useState("");
@@ -25,7 +27,7 @@ const PaymentsContactForm = () => {
                 });
                 // alert("Ваш вопрос отправлен!")
             } catch (error) {
-                console.error("Ошибка при отправке вопроса:", error);
+                console.error("Error with sending question:", error);
             }
         } else {
             // Если "Записаться на курс" → создаём invoice и payment
@@ -54,7 +56,7 @@ const PaymentsContactForm = () => {
 
                 // alert(`Оплата на сумму $${amount} успешно зарегистрирована!`);
             } catch (error) {
-                console.error("Ошибка при создании Invoice:", error);
+                console.error("Error with Invoice creation:", error);
             }
             
         }
@@ -71,18 +73,18 @@ const PaymentsContactForm = () => {
 
         <div className="contact-form">
 
-            <h2>{formType === "enroll" ? "Записаться на курс" : "Задать вопрос"}</h2>
+            <h2>{t(formType === "enroll" ? "footer.register" : "footer.question")}</h2>
 
             {/* Выбор типа формы */}
             <div>
-                <button onClick={() => setFormType("enroll")}>Записаться на курс</button>
-                <button onClick={() => setFormType("question")}>Задать вопрос</button>
+                <button onClick={() => setFormType("enroll")}>{t('footer.registerButton')}</button>
+                <button onClick={() => setFormType("question")}>{t('footer.questionButton')}</button>
             </div>
 
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Ваше имя"
+                    placeholder={t('footer.name')}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -90,7 +92,7 @@ const PaymentsContactForm = () => {
 
                 <input
                     type="email"
-                    placeholder="Ваш email"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -98,29 +100,31 @@ const PaymentsContactForm = () => {
 
                 {formType === "enroll" ? (
                 <>
-                    <label>Выберите сумму:</label>
+                    <label>{t('footer.amount')}</label>
                     <input
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(Number(e.target.value))}
-                    min="150"
+                    min="140"
                     required
                     />
                     <button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Обрабатываем оплату..." : "Оплатить и записаться"}
+                        {isSubmitting ? t('footer.processing') : t('footer.payment')}
                     </button>
                 </>
                 ) : (
                     <>
                         <textarea
-                        placeholder="Введите ваш вопрос"
+                        placeholder={t('footer.message')}
+                        
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
                         />
                         <button variant="primary" type="submit" disabled={isSubmitting}>
-                {isSubmitting ? "Отправить" : "Задать вопрос"}
-                </button>
+                            {isSubmitting ? t('footer.sendButton') : t('footer.askButton')}
+                        </button>
+                        
             </>
         )}
         
@@ -129,14 +133,13 @@ const PaymentsContactForm = () => {
             {/* Если есть invoice → показываем его */}
             {invoice && (
                 <div className="invoice">
-                    <h3>Ваш Invoice</h3>
+                    <h3>{t('footer.invoice')}</h3>
+                    <p><strong>{t('footer.status')}:</strong> {invoice.name}</p>
                     <p><strong>ID:</strong> {invoice.id}</p>
-                    <p><strong>Сумма:</strong> ${invoice.amount}</p>
-                    <p><strong>Статус:</strong> {invoice.status}</p>
-                    <p><strong>Дата:</strong> {invoice.issuedAt?.toDate().toLocaleString()}</p>
+                    <p><strong>{t('footer.price')}:</strong> ${invoice.amount}</p>
+                    <p><strong>{t('footer.date')}:</strong> {invoice.issuedAt?.toDate().toLocaleString()}</p>
                 </div>
             )}
-
         </div>
     );
 };

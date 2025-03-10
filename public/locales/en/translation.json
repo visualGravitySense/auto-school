@@ -6,5 +6,50 @@
     "about": "Meist",
     "price": "Hinnad",
     "contact": "Kontakt"
+  },
+  "footer": {
+    "home": "Kontaktid",
+    "subhead": "Oleme alati ühenduses!",
+    "messengers": "Vastame sõnumitoojates",
+    "register": "Registreeru kursusele",
+    "question": "Küsi",
+    "registerButton": "Registreeru kursusele",
+    "questionButton": "Küsi",
+    "name": "Nimi",
+    "amount": "Sisestage summa",
+    "processing": "Makse töötlemine...",
+    "payment": "Makske ja registreeruge",
+    "message": "Sisestage oma küsimus",
+    "sendButton": "Saada",
+    "askButton": "Esi küsimus",
+    "invoice": "Teie arve",
+    "price": "Summa",
+    "status": "Kandke see summa VIKTORIJA AUTOKOOL OSAÜHING kontole, konto number EE871010220059959011 makse selgitus - sinu nimi",
+    "date": "Kuupäev",
+    "about": "Koolist",
+    "story": "Meie autokool pakub kvaliteetseid sõidukursusi kogenud juhendajatega. Garanteerime koolituse kõrge taseme ja individuaalse lähenemise.",
+    "menu": "Menüü",
+    "contact": "Kontaktid",
+    "phone": "Telefon",
+    "address": "Aadress",
+    "social": "Liitu meiega"
+  },
+  "hero": {
+    "title": "Tere tulemast meie autokooli!",
+    "description": "Hankige oma juhiluba kiiresti ja lihtsalt meie kursustega!",
+    "buttonText": "Registreeruge kursusele"
+  },
+  "popUp": {
+    "choose": "Vali kursus",
+    "label": "Maksesumma"
+  },
+  "courses": {
+    "theory_class": "Teooriakursus klassis",
+    "online_learning": "Kaugõpe",
+    "driving_manual": "Sõidukursus (manuaalkäigukast)",
+    "driving_auto": "Sõidukursus (automaatkäigukast)",
+    "first_aid": "Esmaabi kursused",
+    "dark_slippery": "Pimedad ja libedad sõidurajad",
+    "winter_driving": "Talvised sõidukursused (loa asendamiseks)"
   }
 }

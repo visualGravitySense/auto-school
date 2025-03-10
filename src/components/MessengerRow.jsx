@@ -2,35 +2,52 @@
 import React from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
 
-import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa'; // Импортируем иконки
+import { FaTelegramPlane, FaWhatsapp, FaFacebookMessenger } from 'react-icons/fa'; // Импортируем иконки
+import { useTranslation } from 'react-i18next';
 
 const MessengerRow = () => {
+
+  const { t, i18n } = useTranslation(); 
+  
   return (
     <section className="py-4 bg-dark text-center">
       <Row>
         <Col>
-          <h3>Отвечаем в мессенджерах</h3>
+          <h3>{t('footer.messengers')}</h3>
           <div>
-            {/* Кнопка для Telegram */}
-            <Button
-              variant="outline-primary"
-              href="https://t.me/your_telegram_handle"
-              target="_blank"
-              className="mx-2"
-            >
-              <FaTelegramPlane style={{ marginRight: '8px', width: '24px', height: '24px' }} />
-              Telegram
-            </Button>
+
+             {/* Кнопка для Facebook */}
+             <Button
+                variant="outline-primary"
+                href="https://m.me/viktorija.autokool"
+                target="_blank"
+                className="mx-2"
+                style={{ borderColor: "#ffffff", color: "#ffffff" }}
+              >
+                <FaFacebookMessenger style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+                Messenger
+              </Button>
 
              {/* Кнопка для WhatsApp */}
              <Button
                 variant="outline-success"
-                href="https://wa.me/your_phone_number"
+                href="https://wa.me/37253464508"
                 target="_blank"
                 className="mx-2"
                 >
                 <FaWhatsapp style={{ marginRight: '8px', width: '24px', height: '24px' }} />
                 WhatsApp
+            </Button>
+
+            {/* Кнопка для Telegram */}
+            <Button
+              variant="outline-primary"
+              href="https://t.me/+37258976398"
+              target="_blank"
+              className="mx-2"
+            >
+              <FaTelegramPlane style={{ marginRight: '8px', width: '24px', height: '24px' }} />
+              Telegram
             </Button>
           </div>
         </Col>
