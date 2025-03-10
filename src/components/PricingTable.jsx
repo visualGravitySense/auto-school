@@ -1,17 +1,25 @@
 import { Table } from "react-bootstrap";
 import "./AntiDesignTable.css"
-
-const prices = [
-  { course: "Курс теории в классе", info: "Очные занятия с преподавателем", price: "140 €" },
-  { course: "Интернет обучение", info: "Доступ к онлайн-материалам", price: "160 €" },
-  { course: "Курс вождения (МКПП)", info: "Механическая коробка передач", price: "700 €" },
-  { course: "Курс вождения (АКПП)", info: "Автоматическая коробка передач", price: "840 €" },
-  { course: "Курсы первой медицинской помощи", info: "Основы оказания первой помощи", price: "40 €" },
-  { course: "Курсы тёмного и скользкого вождения", info: "Вождение в сложных условиях", price: "145 €" },
-  { course: "Курсы зимнего вождения (для замены прав)", info: "Обязательный курс для продления прав", price: "150 €" },
-];
+import { useTranslation } from 'react-i18next';
 
 function AntiDesignTable() {
+  const { t, i18n } = useTranslation();
+
+  const prices = [
+    { course: "nameTheory", info: "class.infoTheory", price: "140 €" },
+    { course: "Интернет обучение", info: "class.infoOnline", price: "160 €" },
+    { course: "Курс вождения (МКПП)", info: "class.infoManual", price: "700 €" },
+    { course: "Курс вождения (АКПП)", info: "class.infoAutomat", price: "840 €" },
+    { course: "Курсы первой медицинской помощи", info: "class.infoMedic", price: "40 €" },
+    { course: "Курсы тёмного и скользкого вождения", info: "class.infoWinter", price: "145 €" },
+    { course: "Курсы зимнего вождения (для замены прав)", info: "class.infoLast", price: "150 €" },
+  ];
+
+  const translatedPrices = prices.map(price => ({
+    ...prices,
+    name: t(price.name) // Dynamically translate the name
+  }));
+
   return (
 
     <>
