@@ -1,23 +1,26 @@
  // src/components/Footer.jsx
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button, Nav } from 'react-bootstrap';
-import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { FaTelegramPlane, FaWhatsapp, FaFacebookF } from 'react-icons/fa';
 import logo from '../assets/viktorija-logo.png'; // Путь к вашему логотипу
 import "./Footer.css"
 
 import MessengerRow from './MessengerRow';
 import PaymentsContactForm from './PaymentsContactForm';
 
+import { useTranslation } from 'react-i18next';
+
+
 const Footer = () => {
 
-
+  const { t, i18n } = useTranslation(); 
 
   return (
     <footer className="py-5 bg-dark text-light">
 
-        <h2>Контакты</h2>
-            <h5>Мы всегда на связи!</h5>
-        <img src={logo} alt="Логотип Виктория" style={{ width: '200px' }} />
+        <img src={logo} alt="Logo Viktorija" style={{ width: '200px' }} />
+        <h2>{t('footer.home')}</h2>
+            <h5>{t('footer.subhead')}</h5>
 
         <MessengerRow />
 
@@ -44,30 +47,31 @@ const Footer = () => {
             <Row>
             {/* 1. Info про школу */}
             <Col md={4}>
-                <h3>О школе</h3>
+                <h3>{t('footer.about')}</h3>
                 <p>
-                Наша автошкола предоставляет качественные курсы вождения с опытными инструкторами. Мы гарантируем высокий уровень подготовки и индивидуальный подход.
+                {t('footer.story')}
                 </p>
             </Col>
 
             {/* 2. Меню с ссылками на другие страницы */}
             <Col md={4}>
-                <h3>Меню</h3>
+                <h3>{t('footer.menu')}</h3>
                 <Nav className="flex-column">
-                <Nav.Link href="/">Главная</Nav.Link>
-                <Nav.Link href="/courses">Курсы</Nav.Link>
-                <Nav.Link href="/about">О нас</Nav.Link>
-                <Nav.Link href="/contact">Контакты</Nav.Link>
+                <Nav.Link href="/">{t('navbar.home')}</Nav.Link>
+                <Nav.Link href="/courses">{t('navbar.courses')}</Nav.Link>
+                <Nav.Link href="/about">{t('navbar.about')}</Nav.Link>
+                <Nav.Link href="/price">{t('navbar.price')}</Nav.Link>
+                <Nav.Link href="/contact">{t('navbar.contact')}</Nav.Link>
                 {/* <Nav.Link href="/blog">Блог</Nav.Link> */}
                 </Nav>
             </Col>
 
             {/* 3. Контакты */}
             <Col md={4}>
-                <h3>Контакты</h3>
-                <p>Телефон: +372 123 4567</p>
-                <p>Email: info@autokool.ee</p>
-                <p>Адрес: ул. Примерная, 10, Таллинн</p>
+                <h3>{t('footer.contact')}</h3>
+                <p>{t('footer.phone')}Телефон: <a href="tel:+3721234567">+372 123 4567</a></p>
+                <p>Email: <a href="mailto:viktorijaautokool@hot.ee">viktorijaautokool@hot.ee</a></p>
+                <p>{t('footer.address')}: <a href="https://g.co/kgs/reQdX5f"> Jaama 1a - 2 korrus, Nõmme keskus, Tallinn 11615</a></p>
             </Col>
             </Row>
 
@@ -75,14 +79,17 @@ const Footer = () => {
 
             <Row className="mt-5">
                 <Col className="text-center">
-                    <h5>Присоединяйтесь к нам</h5>
+                    <h5>{t('footer.social')}</h5>
                     <div>
-                    <a href="https://t.me/yourtelegram" className="text-light mx-3" aria-label="Telegram">
+                    <a href="https://www.facebook.com/viktorija.autokool" target="_blank" className="text-light mx-3" aria-label="Facebook">
+                        <FaFacebookF size={30} />
+                    </a>
+                    {/* <a href="https://t.me/yourtelegram" className="text-light mx-3" aria-label="Telegram">
                         <FaTelegramPlane size={30} />
-                    </a>
-                    <a href="https://wa.me/yourwhatsapp" className="text-light mx-3" aria-label="WhatsApp">
+                    </a> */}
+                    {/* <a href="https://wa.me/yourwhatsapp" className="text-light mx-3" aria-label="WhatsApp">
                         <FaWhatsapp size={30} />
-                    </a>
+                    </a> */}
                     </div>
                 </Col>
             </Row>
