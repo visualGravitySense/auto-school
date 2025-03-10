@@ -6,8 +6,12 @@ import './HeroBlock.css'; // Import the CSS file for custom styling
 import PopUp from "./PopUp";
 import ContactForm from "./ContactForm";
 
-const HeroBlock = ({ title, description, buttonText, buttonLink, imageUrl }) => {
-    const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+import { useTranslation } from 'react-i18next';
+
+const HeroBlock = ({ buttonLink, imageUrl }) => {
+  const { t, i18n } = useTranslation();  
+  
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
     
     return (
       <>
@@ -15,23 +19,16 @@ const HeroBlock = ({ title, description, buttonText, buttonLink, imageUrl }) => 
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
-              <h1 className="hero-title">{title}</h1>
-              <p className="hero-description">{description}</p>
+              <h1 className="hero-title">{t('hero.title')}</h1>
+              <p className="hero-description">{t('hero.description')}</p>
 
               <Button 
                 onClick={() => setIsPopUpOpen(true)}
                 variant="primary" 
                 href={buttonLink} 
                 className="hero-btn">
-                  Записаться на курс 
+                  {t('hero.buttonText')} 
               </Button>
-
-                {/* <button
-                  onClick={() => setIsPopUpOpen(true)}
-                  className="px-4 py-2 bg-blue-500 text-white rounded"
-                >
-                  Открыть форму
-                </button> */}
 
             </Col>
             <Col md={6}>

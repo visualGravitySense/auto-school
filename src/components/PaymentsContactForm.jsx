@@ -75,7 +75,6 @@ const PaymentsContactForm = () => {
 
             <h2>{t(formType === "enroll" ? "footer.register" : "footer.question")}</h2>
 
-
             {/* Выбор типа формы */}
             <div>
                 <button onClick={() => setFormType("enroll")}>{t('footer.registerButton')}</button>
@@ -110,7 +109,7 @@ const PaymentsContactForm = () => {
                     required
                     />
                     <button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? t('footer.processing') : t('footer.payment')}
+                        {isSubmitting ? t('footer.processing') : t('footer.payment')}
                     </button>
                 </>
                 ) : (

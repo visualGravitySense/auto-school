@@ -33,5 +33,23 @@
     "phone": "Telefon",
     "address": "Aadress",
     "social": "Liitu meiega"
+  },
+  "hero": {
+    "title": "Tere tulemast meie autokooli!",
+    "description": "Hankige oma juhiluba kiiresti ja lihtsalt meie kursustega!",
+    "buttonText": "Registreeruge kursusele"
+  },
+  "popUp": {
+    "choose": "Vali kursus",
+    "label": "Maksesumma"
+  },
+  "courses": {
+    "theory_class": "Teooriakursus klassis",
+    "online_learning": "Kaugõpe",
+    "driving_manual": "Sõidukursus (manuaalkäigukast)",
+    "driving_auto": "Sõidukursus (automaatkäigukast)",
+    "first_aid": "Esmaabi kursused",
+    "dark_slippery": "Pimedad ja libedad sõidurajad",
+    "winter_driving": "Talvised sõidukursused (loa asendamiseks)"
   }
 }

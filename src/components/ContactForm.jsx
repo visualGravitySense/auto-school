@@ -1,24 +1,32 @@
 import { useState } from "react";
 import { db } from "../firebase";
 import { collection, addDoc, serverTimestamp, doc, getDoc } from "firebase/firestore";
-
-const courses = [
-  { id: "theory_class", name: "Курс теории в классе", price: 140 },
-  { id: "online_learning", name: "Интернет обучение", price: 160 },
-  { id: "driving_manual", name: "Курс вождения (МКПП)", price: 700 },
-  { id: "driving_auto", name: "Курс вождения (АКПП)", price: 840 },
-  { id: "first_aid", name: "Курсы первой медицинской помощи", price: 40 },
-  { id: "dark_slippery", name: "Курсы тёмного и скользкого вождения", price: 145 },
-  { id: "winter_driving", name: "Курсы зимнего вождения (для замены прав)", price: 150 },
-];
+import { useTranslation } from 'react-i18next';
 
 const ContactForm = () => {
+  const { t, i18n } = useTranslation(); 
+
+  const courses = [
+    { id: "theory_class", name: "courses.theory_class", price: 140 },
+    { id: "online_learning", name: "courses.online_learning", price: 160 },
+    { id: "driving_manual", name: "courses.driving_manual", price: 700 },
+    { id: "driving_auto", name: "courses.driving_auto", price: 840 },
+    { id: "first_aid", name: "courses.first_aid", price: 40 },
+    { id: "dark_slippery", name: "courses.dark_slippery", price: 145 },
+    { id: "winter_driving", name: "courses.winter_driving", price: 150 },
+  ];
+  
+  const translatedCourses = courses.map(course => ({
+    ...course,
+    name: t(course.name) // Dynamically translate the name
+  }));
+
   const [formType, setFormType] = useState("enroll"); // "question" или "enroll"
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [selectedCourse, setSelectedCourse] = useState(null);
-  const [amount, setAmount] = useState("500"); // Вручную редактируемая сумма
+  const [amount, setAmount] = useState("140"); // Вручную редактируемая сумма
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [invoice, setInvoice] = useState(null);
 
@@ -93,24 +101,25 @@ const ContactForm = () => {
 
   return (
     <div className="contact-form">
-      <h2>{formType === "enroll" ? "Записаться на курс" : "Задать вопрос"}</h2>
+      {/* <h2>{formType === "enroll" ? "Записаться на курс" : "Задать вопрос"}</h2> */}
+      <h2>{t(formType === "enroll" ? "footer.register" : "footer.question")}</h2>
 
       <div>
-        <button onClick={() => setFormType("enroll")}>Записаться на курс</button>
-        <button onClick={() => setFormType("question")}>Задать вопрос</button>
+        <button onClick={() => setFormType("enroll")}>{t('footer.registerButton')}</button>
+        <button onClick={() => setFormType("question")}>{t('footer.questionButton')}</button>
       </div>
 
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Ваше имя"
+          placeholder={t('footer.name')}
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
         />
         <input
           type="email"
-          placeholder="Ваш email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -118,8 +127,9 @@ const ContactForm = () => {
 
         {formType === "enroll" ? (
           <>
-            <h3>Выберите курс:</h3>
-            {courses.map((course) => (
+            <h3>{t('popUp.choose')}:</h3>
+
+            {translatedCourses.map((course) => (
               <label key={course.id} style={{ display: "block", marginBottom: "5px" }}>
                 <input
                   type="radio"
@@ -134,7 +144,7 @@ const ContactForm = () => {
             ))}
 
             <label>
-              <h4>Сумма оплаты (€):</h4>
+              <h4>{t('popUp.label')} (€):</h4>
               <input
                 type="number"
                 value={amount}
@@ -145,33 +155,33 @@ const ContactForm = () => {
             </label>
 
             <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Обрабатываем оплату..." : "Оплатить и записаться"}
+              {isSubmitting ? t('footer.processing') : t('footer.payment')}
             </button>
           </>
         ) : (
           <>
             <textarea
-              placeholder="Введите ваш вопрос"
+              placeholder={t('footer.message')}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
             />
             <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Отправка..." : "Отправить вопрос"}
+            {isSubmitting ? t('footer.sendButton') : t('footer.askButton')}
             </button>
           </>
         )}
       </form>
 
       {invoice && (
+        
         <div className="invoice">
-          <h3>Ваш Invoice</h3>
+          <h3>{t('footer.invoice')}</h3>
+          <p><strong>{t('footer.status')}:</strong> {invoice.name}</p>
           <p><strong>ID:</strong> {invoice.id}</p>
-          <p><strong>Курс:</strong> {invoice.course}</p>
-          <p><strong>Сумма:</strong> €{invoice.amount}</p>
-          <p><strong>Статус:</strong> {invoice.status}</p>
-          <p><strong>Дата:</strong> {invoice.issuedAt?.toDate().toLocaleString()}</p>
-        </div>
+          <p><strong>{t('footer.price')}:</strong> ${invoice.amount}</p>
+          <p><strong>{t('footer.date')}:</strong> {invoice.issuedAt?.toDate().toLocaleString()}</p>
+      </div>
       )}
     </div>
   );
