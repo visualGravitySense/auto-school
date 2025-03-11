@@ -101,6 +101,75 @@
       { "name": "Aleksandr Kuznetsov", "experience": 12 }
     ]
   },
+  "categories": {
+    "title": "Meie kursused",
+    "enroll": "Registreeru",
+    "list": [
+      {
+        "id": 1,
+        "name": "Teooriakursus klassiruumis",
+        "price": "160 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Sõidukursus manuaalkäigukastiga",
+        "price": "700 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Sõidukursus automaatkäigukastiga",
+        "price": "840 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Esmaabikursus",
+        "price": "40 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Pimedas ja libedal sõitmise kursus",
+        "price": "145 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Talvesõidu kursus esmase juhiloa vahetamiseks",
+        "price": "150 eurot",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Tundide ajakava",
+    "date": "Kuupäev",
+    "time": "Aeg",
+    "course": "Kursus",
+    "instructor": "Õpetaja",
+    "list": [
+      {
+        "date": "10. märts 2025",
+        "time": "17:00 - 19:00",
+        "course": "Teooriakursus klassiruumis",
+        "instructor": "Igor Nagorski"
+      },
+      {
+        "date": "12. märts 2025",
+        "time": "14:00 - 16:00",
+        "course": "Esmaabikursus",
+        "instructor": "Maria Smirnova"
+      },
+      {
+        "date": "15. märts 2025",
+        "time": "18:00 - 20:00",
+        "course": "Talvesõidu kursus esmase juhiloa vahetamiseks",
+        "instructor": "Igor Nagorski"
+      }
+    ]
+  },
   "class": {
     "nameTheory": "Teooriakursus klassis",
     "infoTheory": "Kontaktõpe koos õpetajaga",

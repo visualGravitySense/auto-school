@@ -62,70 +62,139 @@
       "amount": "Сумма",
       "date": "Дата",
       "reviews": "Отзывы учеников"
-    },
-    "advantages": {
-      "title": "Наши преимущества",
-      "subtitle": "Почему стоит выбрать нас?",
-      "items": [
-        { "title": "Быстрое обучение", "description": "Освойте навыки за короткий срок." },
-        { "title": "Лучшие преподаватели", "description": "Обучение у профессионалов." },
-        { "title": "Практическая польза", "description": "Получите востребованные навыки." },
-        { "title": "Доступно онлайн", "description": "Учитесь в любое время и в любом месте." }
-      ]
-    },
-    "tarifComparison": {
-      "title": "Сравнение тарифов",
-      "plans": ["Базовый", "Оптимальный", "Премиум"],
-      "features": ["Кол-во уроков", "Онлайн-теория", "Индивидуальный инструктор", "Экзамен в ГИБДД", "Цена"]
-    },
-    "testimonials": {
-      "title": "Реальные истории учеников",
-      "reviews": [
-        { "text": "Шикарная автошкола, отличные преподаватели.", "author": "Ульяна Зыкова" },
-        { "text": "Хорошо и понятно все объясняют.", "author": "Сергей" },
-        { "text": "Очень счастлива, что именно в этой автошколе я училась.", "author": "Аисель Агаева" }
-      ]
-    },
-    "about": {
-      "title": "18 лет на пути к вашей уверенности за рулём",
-      "description": "4500 выпускников. Профессионализм. Результат.",
-      "cars": [
-        { "model": "Toyota Corolla", "engine": "1.8 л, 140 л.с.", "transmission": "Автомат", "fuel": "Бензин" },
-        { "model": "Toyota Corolla", "engine": "1.6 л, 110 л.с.", "transmission": "Механика", "fuel": "Дизель" },
-        { "model": "Toyota Corolla", "engine": "1.6 л, 123 л.с.", "transmission": "Автомат", "fuel": "Бензин" }
-      ],
-      "instructors": [
-        { "name": "Иван Петров", "experience": 10 },
-        { "name": "Мария Сидорова", "experience": 8 },
-        { "name": "Александр Кузнецов", "experience": 12 }
-      ]
-    },
-    "class": {
-      "nameTheory": "Курс теории в классе",
-      "infoTheory": "Очные занятия с преподавателем",
-      
-      "nameOnline": "Интернет обучение", 
-      "infoOnline": "Доступ к онлайн-материалам", 
-      
-      "nameManual": "Курс вождения (МКПП)", 
-      "infoManual": "Механическая коробка передач", 
-      
-      "nameAutomat": "Курс вождения (АКПП)", 
-      "infoAutomat": "Автоматическая коробка передач", 
-      
-      "nameMedic": "Курсы первой медицинской помощи", 
-      "infoMedic": "Основы оказания первой помощи", 
-      
-      "nameWinter": "Курсы тёмного и скользкого вождения", 
-      "infoWinter": "Вождение в сложных условиях", 
-      
-      "nameLast": "Курсы зимнего вождения", 
-      "infoLast": "Обязательный курс для продления прав"
-      
-    },
-    "contact": {
-      "title": "Свяжитесь с нами"
-    }
+  },
+  "advantages": {
+    "title": "Наши преимущества",
+    "subtitle": "Почему стоит выбрать нас?",
+    "items": [
+      { "title": "Быстрое обучение", "description": "Освойте навыки за короткий срок." },
+      { "title": "Лучшие преподаватели", "description": "Обучение у профессионалов." },
+      { "title": "Практическая польза", "description": "Получите востребованные навыки." },
+      { "title": "Доступно онлайн", "description": "Учитесь в любое время и в любом месте." }
+    ]
+  },
+  "tarifComparison": {
+    "title": "Сравнение тарифов",
+    "plans": ["Базовый", "Оптимальный", "Премиум"],
+    "features": ["Кол-во уроков", "Онлайн-теория", "Индивидуальный инструктор", "Экзамен в ГИБДД", "Цена"]
+  },
+  "testimonials": {
+    "title": "Реальные истории учеников",
+    "reviews": [
+      { "text": "Шикарная автошкола, отличные преподаватели.", "author": "Ульяна Зыкова" },
+      { "text": "Хорошо и понятно все объясняют.", "author": "Сергей" },
+      { "text": "Очень счастлива, что именно в этой автошколе я училась.", "author": "Аисель Агаева" }
+    ]
+  },
+  "categories": {
+    "title": "Наши курсы",
+    "enroll": "Записаться",
+    "list": [
+      {
+        "id": 1,
+        "name": "Курс теории в классе",
+        "price": "160 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Курс вождения на мануальной коробке",
+        "price": "700 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Курс вождения на автоматической коробке",
+        "price": "840 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Курсы первой медицинской помощи",
+        "price": "40 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Курсы тёмного и скользкого вождения",
+        "price": "145 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Курсы зимнего вождения , для замены первичных прав на постоянные",
+        "price": "150 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Расписание занятий",
+    "date": "Дата",
+    "time": "Время",
+    "course": "Курс",
+    "instructor": "Преподаватель",
+    "list": [
+      {
+        "date": "10 марта 2025",
+        "time": "17:00 - 19:00",
+        "course": "Курс теории в классе",
+        "instructor": "Игорь Нагорский"
+      },
+      {
+        "date": "12 марта 2025",
+        "time": "14:00 - 16:00",
+        "course": "Курсы первой медицинской помощи",
+        "instructor": "Мария Смирнова"
+      },
+      {
+        "date": "15 марта 2025",
+        "time": "18:00 - 20:00",
+        "course": "Курсы зимнего вождения , для замены первичных прав на постоянные",
+        "instructor": "Игорь Нагорский"
+      }
+    ]
+  },
+  "about": {
+    "title": "18 лет на пути к вашей уверенности за рулём",
+    "description": "4500 выпускников. Профессионализм. Результат.",
+    "cars": [
+      { "model": "Toyota Corolla", "engine": "1.8 л, 140 л.с.", "transmission": "Автомат", "fuel": "Бензин" },
+      { "model": "Toyota Corolla", "engine": "1.6 л, 110 л.с.", "transmission": "Механика", "fuel": "Дизель" },
+      { "model": "Toyota Corolla", "engine": "1.6 л, 123 л.с.", "transmission": "Автомат", "fuel": "Бензин" }
+    ],
+    "instructors": [
+      { "name": "Иван Петров", "experience": 10 },
+      { "name": "Мария Сидорова", "experience": 8 },
+      { "name": "Александр Кузнецов", "experience": 12 }
+    ]
+  },
+  "class": {
+    "nameTheory": "Курс теории в классе",
+    "infoTheory": "Очные занятия с преподавателем",
+    
+    "nameOnline": "Интернет обучение", 
+    "infoOnline": "Доступ к онлайн-материалам", 
+    
+    "nameManual": "Курс вождения (МКПП)", 
+    "infoManual": "Механическая коробка передач", 
+    
+    "nameAutomat": "Курс вождения (АКПП)", 
+    "infoAutomat": "Автоматическая коробка передач", 
+    
+    "nameMedic": "Курсы первой медицинской помощи", 
+    "infoMedic": "Основы оказания первой помощи", 
+    
+    "nameWinter": "Курсы тёмного и скользкого вождения", 
+    "infoWinter": "Вождение в сложных условиях", 
+    
+    "nameLast": "Курсы зимнего вождения", 
+    "infoLast": "Обязательный курс для продления прав"
+    
+  },
+  "contact": {
+    "title": "Свяжитесь с нами"
+  }
 
 
 }

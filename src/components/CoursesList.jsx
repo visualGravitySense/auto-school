@@ -3,21 +3,25 @@ import { Card, Button, Row, Col } from 'react-bootstrap';
 
 import "./CoursesList.css"
 
-const CourseList = ({ courses }) => {
+import { useTranslation } from "react-i18next";
+
+const CourseList = ({ categories }) => {
+  const { t } = useTranslation();
+  const categories = t("categories.list", { returnObjects: true });
     return (
       <div className="container mt-5">
-        <h2>Наши курсы</h2>
+        <h2>{t("categories.title")}</h2>
         <Row>
-          {courses.map(course => (
-            <Col key={course.id} md={4} className="mb-4">
+          {categories.map((category) => (
+            <Col key={category.id} md={4} className="mb-4">
               <Card className="course-card">
-                <Card.Img variant="top" src={course.image} alt={course.name} />
+                <Card.Img variant="top" src={category.image} alt={category.name} />
                 <Card.Body>
-                  <Card.Title>{course.name}</Card.Title>
+                <Card.Title>{category.name}</Card.Title>
                   <Card.Text>
-                    <strong>{course.price}</strong>
+                    <strong>{tcategory.price}</strong>
                   </Card.Text>
-                  <Button variant="primary">Записаться</Button>
+                  <Button variant="primary">{t("categories.enroll")}</Button>
                 </Card.Body>
               </Card>
             </Col>
@@ -25,6 +29,7 @@ const CourseList = ({ courses }) => {
         </Row>
       </div>
     );
-  };
+};
+
   
   export default CourseList;
