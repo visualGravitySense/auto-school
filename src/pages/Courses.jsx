@@ -5,6 +5,7 @@ import FAQBlock from "../components/FAQBlock"
 import ScheduleBlock from "../components/ScheduleBlock"
 import ContactForm from "../components/ContactForm"
 
+
 // const heroData = {
 //   title: 'Наши Премиум Услуги',
 //   description: 'Изучите широкий спектр услуг, которые помогут вашему бизнесу расти и процветать.',
@@ -13,7 +14,7 @@ import ContactForm from "../components/ContactForm"
 //   imageUrl: '/images/services.jpg',
 // };
 
-const courses = [
+const categories = [
   {
     id: 1,
     name: 'Курс теории в классе',
@@ -52,7 +53,7 @@ const courses = [
   },
 ];
 
-const scheduleData = [
+const schedule = [
   { date: '10 марта 2025', time: '17:00 - 19:00', course: 'Курс теории в классе', instructor: 'Игорь Нагорский' },
   { date: '12 марта 2025', time: '14:00 - 16:00', course: 'Курсы первой медицинской помощи', instructor: 'Мария Смирнова' },
   { date: '15 марта 2025', time: '18:00 - 20:00', course: 'Курсы зимнего вождения , для замены первичных прав на постоянные', instructor: 'Игорь Нагорский' },
@@ -61,12 +62,13 @@ const scheduleData = [
 
   
   const Courses = () => {
+    
     return (
       <>
 
         <HeroBlock {...heroData} />
 
-        <CoursesList courses={courses} />
+        <CoursesList courses={categories} />
 
         <ContactForm />
 

@@ -1,18 +1,22 @@
 import React from 'react';
 import { Container, Table } from 'react-bootstrap';
 
+import { useTranslation } from "react-i18next";
+
 const ScheduleBlock = ({ schedule }) => {
+  const { t } = useTranslation();
+  
   return (
     <section className="schedule-block py-5">
       <Container>
-        <h2 className="text-center mb-4">Расписание занятий</h2>
+        <h2 className="text-center mb-4">{t("schedule.title")}</h2>
         <Table striped bordered hover responsive className="text-center">
           <thead>
             <tr>
-              <th>Дата</th>
-              <th>Время</th>
-              <th>Курс</th>
-              <th>Преподаватель</th>
+              <th>{t("schedule.date")}</th>
+              <th>{t("schedule.time")}</th>
+              <th>{t("schedule.course")}</th>
+              <th>{t("schedule.instructor")}</th>
             </tr>
           </thead>
           <tbody>

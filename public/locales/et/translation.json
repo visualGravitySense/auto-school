@@ -86,6 +86,75 @@
       { "text": "Очень счастлива, что именно в этой автошколе я училась.", "author": "Аисель Агаева" }
     ]
   },
+  "categories": {
+    "title": "Наши курсы",
+    "enroll": "Записаться",
+    "list": [
+      {
+        "id": 1,
+        "name": "Курс теории в классе",
+        "price": "160 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Курс вождения на мануальной коробке",
+        "price": "700 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Курс вождения на автоматической коробке",
+        "price": "840 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Курсы первой медицинской помощи",
+        "price": "40 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Курсы тёмного и скользкого вождения",
+        "price": "145 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Курсы зимнего вождения , для замены первичных прав на постоянные",
+        "price": "150 евро",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/RACT-training-car-Burnie-20150216-003.jpg/330px-RACT-training-car-Burnie-20150216-003.jpg"
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Расписание занятий",
+    "date": "Дата",
+    "time": "Время",
+    "course": "Курс",
+    "instructor": "Преподаватель",
+    "list": [
+      {
+        "date": "10 марта 2025",
+        "time": "17:00 - 19:00",
+        "course": "Курс теории в классе",
+        "instructor": "Игорь Нагорский"
+      },
+      {
+        "date": "12 марта 2025",
+        "time": "14:00 - 16:00",
+        "course": "Курсы первой медицинской помощи",
+        "instructor": "Мария Смирнова"
+      },
+      {
+        "date": "15 марта 2025",
+        "time": "18:00 - 20:00",
+        "course": "Курсы зимнего вождения , для замены первичных прав на постоянные",
+        "instructor": "Игорь Нагорский"
+      }
+    ]
+  },
   "about": {
     "title": "18 лет на пути к вашей уверенности за рулём",
     "description": "4500 выпускников. Профессионализм. Результат.",
