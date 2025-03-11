@@ -53,11 +53,11 @@ const GiftCard = () => {
 
   return (
     <div className="text-black p-6 rounded-lg w-full max-w-lg mx-auto border-2 border-white">
-      <h2 className="text-2xl font-bold text-center">Лучший подарок — знания!</h2>
-      <p className="text-center mt-2">Для друзей, родных и коллег</p>
+      <h2 className="text-2xl font-bold text-center">{t('bestGift')}</h2>
+      <p className="text-center mt-2">{t('forFriends')}</p>
 
       <div className="mt-6 text-center">
-        <h3 className="text-lg">Выбери сумму</h3>
+        <h3 className="text-lg">{t('chooseAmount')}</h3>
         <input 
           type="number"
           value={amount}
@@ -66,36 +66,35 @@ const GiftCard = () => {
         />
       </div>
 
-      <p className="text-center text-sm mt-2">Выбери сумму → Введи данные → Оплата</p>
+      <p className="text-center text-sm mt-2">{t('gift.enterDetails')}</p>
 
       <button 
         className="btn btn-primary"
         onClick={handlePayment}
         disabled={isLoading}>
-          {isLoading ? "Создаём платёж..." : "Купить сертификат"}
+          {isLoading ? t('gift.createPayment') : t('gift.buyGiftCard')}
       </button>
 
       <div className="mt-6 text-center">
-        <h3 className="text-lg">Превью сертификата</h3>
-        <div className="text-black p-4 rounded mt-2">Как он будет выглядеть</div>
+        <h3 className="text-lg">{t('gift.certificatePreview')}</h3>
+        <div className="text-black p-4 rounded mt-2">{t('gift.certificatePreviewDescription')}</div>
 
         {invoice && (
           <div style={{ marginTop: "20px", padding: "10px", border: "1px solid #ccc" }}>
-            <h3>Счёт #{invoice.id}</h3>
-            <p>Сумма: {invoice.amount} {invoice.currency}</p>
-            <p>Дата: {new Date(invoice.issuedAt.toDate()).toLocaleString()}</p>
+            <h3>{t('gift.invoice')} #{invoice.id}</h3>
+            <p>{t('gift.amount')}: {invoice.amount} {invoice.currency}</p>
+            <p>{t('gift.date')}: {new Date(invoice.issuedAt.toDate()).toLocaleString()}</p>
           </div>
         )}
       </div>
 
       <div className="mt-6 text-center">
-        <h3 className="text-lg">Отзывы учеников</h3>
+        <h3 className="text-lg">{t('gift.studentReviews')}</h3>
         <div className="flex justify-center gap-4 mt-2">
           <div className="w-12 h-12 bg-white rounded-full"></div>
           <div className="w-12 h-12 bg-white rounded-full"></div>
           <div className="w-12 h-12 bg-white rounded-full"></div>
         </div>
-        {/* <p className="text-sm mt-1">Short Text Short Text Short Text</p> */}
       </div>
     </div>
   );

@@ -64,14 +64,47 @@
     "date": "Kuupäev",
     "reviews": "Õpilaste arvustused"
   },
+  "gift": {
+    
+      "bestGift": "Parim kingitus on teadmine!",
+      "forFriends": "Sõpradele, pereliikmetele ja kolleegidele",
+      "chooseAmount": "Vali summa",
+      "enterDetails": "Vali summa → Sisesta andmed → Maksmine",
+      "createPayment": "Loome makse...",
+      "buyGiftCard": "Osta kinkekaart",
+      "certificatePreview": "Kinkekaardi eelvaade",
+      "certificatePreviewDescription": "Kuidas see välja näeb",
+      "invoice": "Arve #",
+      "amount": "Summa",
+      "date": "Kuupäev",
+      "studentReviews": "Õpilaste arvustused"
+    
+
+  },
   "advantages": {
     "title": "Meie eelised",
     "subtitle": "Miks valida meid?",
-    "items": [
-      { "title": "Kiire õpe", "description": "Omandage oskused lühikese ajaga." },
-      { "title": "Parimad õpetajad", "description": "Õppimine professionaalide juhendamisel." },
-      { "title": "Praktiline kasu", "description": "Hankige nõutud oskused." },
-      { "title": "Saadaval veebis", "description": "Õppige igal ajal ja igas kohas." }
+    "list": [
+      {
+        "icon": "🚀",
+        "title": "Kiire õppimine",
+        "description": "Omandage oskused lühikese ajaga."
+      },
+      {
+        "icon": "🎓",
+        "title": "Parimad õpetajad",
+        "description": "Õppimine professionaalide juhendamisel."
+      },
+      {
+        "icon": "💼",
+        "title": "Praktiline kasu",
+        "description": "Saage väärtuslikke ja nõutud oskusi."
+      },
+      {
+        "icon": "🌍",
+        "title": "Saadaval veebis",
+        "description": "Õppige igal ajal ja igal pool."
+      }
     ]
   },
   "tarifComparison": {
