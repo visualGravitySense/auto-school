@@ -78,21 +78,21 @@ const galleryImages = [
 
 
 const About = () => {
-    return (
-        <>
+  return (
+    <>
 
-            <HeroBlock {...heroData} />
+    <HeroBlock {...heroData} />
 
-            <HistoryBlock {...historyData} />
+    <HistoryBlock {...historyData} />
 
-            <InstructorsBlock instructors={instructorsData} />
+    <InstructorsBlock instructors={instructorsData} />
 
-            <CarParkBlock cars={carData} />
+    <CarParkBlock cars={carData} />
 
-            <PhotoGallery images={galleryImages} />
-        
-        </>
-    );
+    <PhotoGallery images={galleryImages} /> 
+    
+    </>
+  );
 };
 
 export default About;

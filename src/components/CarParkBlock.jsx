@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { useTranslation } from "react-i18next";
 
 const CarParkBlock = ({ cars }) => {
+  const { t } = useTranslation();
+  const cars = t("about.cars", { returnObjects: true });
   return (
     <section className="car-park-block py-5">
       <Container>
-        <h2 className="text-center mb-4">Наш автопарк</h2>
+      <h2 className="text-center mb-4">{t("cars.title")}</h2>
         <Row>
           {cars.map((car, index) => (
             <Col md={4} sm={6} xs={12} key={index} className="mb-4">
@@ -14,10 +17,10 @@ const CarParkBlock = ({ cars }) => {
                 <Card.Body>
                   <Card.Title>{car.model}</Card.Title>
                   <Card.Text>
-                    <strong>Год выпуска:</strong> {car.year} <br />
-                    <strong>Двигатель:</strong> {car.engine} <br />
-                    <strong>Трансмиссия:</strong> {car.transmission} <br />
-                    <strong>Топливо:</strong> {car.fuel} <br />
+                    {/* <strong>Год выпуска:</strong> {car.year} <br /> */}
+                    <strong>{t("cars.engine")}:</strong> {car.engine} <br />
+                    <strong>Т{t("cars.transmissiog")}:</strong> {car.transmission} <br />
+                    <strong>{t("cars.fuel")}:</strong> {car.fuel} <br />
                   </Card.Text>
                 </Card.Body>
               </Card>
