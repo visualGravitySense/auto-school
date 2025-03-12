@@ -6,13 +6,13 @@ import ScheduleBlock from "../components/ScheduleBlock"
 import ContactForm from "../components/ContactForm"
 
 
-// const heroData = {
-//   title: 'Наши Премиум Услуги',
-//   description: 'Изучите широкий спектр услуг, которые помогут вашему бизнесу расти и процветать.',
-//   buttonText: 'Узнать больше',
-//   buttonLink: '#services',
-//   imageUrl: '/images/services.jpg',
-// };
+const heroData = {
+  title: 'Наши Премиум Услуги',
+  description: 'Изучите широкий спектр услуг, которые помогут вашему бизнесу расти и процветать.',
+  buttonText: 'Узнать больше',
+  buttonLink: '#services',
+  imageUrl: '/images/services.jpg',
+};
 
 const categories = [
   {

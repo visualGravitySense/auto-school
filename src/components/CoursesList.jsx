@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 
 const CourseList = ({ categories }) => {
   const { t } = useTranslation();
-  const categories = t("categories.list", { returnObjects: true });
+  const translateCategories = t("categories.list", { returnObjects: true });
     return (
       <div className="container mt-5">
         <h2>{t("categories.title")}</h2>

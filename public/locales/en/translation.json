@@ -52,6 +52,58 @@
     "dark_slippery": "Pimedad ja libedad sõidurajad",
     "winter_driving": "Talvised sõidukursused (loa asendamiseks)"
   },
+  "coursesPrice": {
+      "title": "Hinnad",
+      "columns": {
+        "course": "Kursus",
+        "info": "Lisainfo",
+        "price": "Hind"
+      },
+      "list": [
+        {
+          "id": 1,
+          "name": "Teooriakursus",
+          "info": "Klassitunnid õpetajaga",
+          "price": "140 €"
+        },
+        {
+          "id": 2,
+          "name": "Internetikoolitus",
+          "info": "Kursuse läbimine veebis",
+          "price": "160 €"
+        },
+        {
+          "id": 3,
+          "name": "Sõidukursus (Manuaal)",
+          "info": "Praktiline õpe manuaalkastiga",
+          "price": "700 €"
+        },
+        {
+          "id": 4,
+          "name": "Sõidukursus (Automaat)",
+          "info": "Praktiline õpe automaatkastiga",
+          "price": "840 €"
+        },
+        {
+          "id": 5,
+          "name": "Esmaabi kursus",
+          "info": "Esmaabi andmise koolitus",
+          "price": "40 €"
+        },
+        {
+          "id": 6,
+          "name": "Libedasõit ja pimedasõit",
+          "info": "Ekstreemse juhtimise koolitus",
+          "price": "145 €"
+        },
+        {
+          "id": 7,
+          "name": "Talvesõidu kursus (juhiloa vahetamiseks)",
+          "info": "Ajutise juhiloa vahetamiseks vajalik",
+          "price": "150 €"
+        }
+      ]
+    },
   "giftCard": {
     "title": "Parim kingitus on teadmised!",
     "subtitle": "Sõpradele, pereliikmetele ja kolleegidele",
@@ -226,6 +278,7 @@
     "infoLast": "Kohustuslik kursus juhilubade pikendamiseks"
   },
   "contact": {
-    "title": "Võtke meiega ühendust"
+    "title": "Võtke meiega ühendust",
+    "partner": "Partnerid"
   }
 }

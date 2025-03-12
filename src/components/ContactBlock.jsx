@@ -13,19 +13,19 @@ function ContactBlock() {
                 <Col md={6}>
                     <h2 className="text-2xl font-bold border-b-2 border-pink-500 pb-2">{t('contact.title')}</h2>
                     <h3>{t('footer.contact')}</h3>
-                    <p>{t('footer.phone')}: <a href="tel:+3721234567">+372 123 4567</a></p>
-                    <p>Email: <a href="mailto:viktorijaautokool@hot.ee">viktorijaautokool@hot.ee</a></p>
-                    <p>{t('footer.address')}: <a href="https://g.co/kgs/reQdX5f"> Jaama 1a - 2 korrus, Nõmme keskus, Tallinn 11615</a></p>
+                    {/* <p>{t('footer.phone')}: <a href="tel:+37253464508">+372 5346 4508</a></p> */}
+                    {/* <p>Email: <a href="mailto:viktorijaautokool@hot.ee">viktorijaautokool@hot.ee</a></p> */}
+                    {/* <p>{t('footer.address')}: <a href="https://g.co/kgs/reQdX5f"> Jaama 1a - 2 korrus, Nõmme keskus, Tallinn 11615</a></p> */}
                     
                     <div className="space-y-4 flex flex-col justify-center">
                         <p className="flex items-center gap-2 text-lg">
-                        <FaPhone className="text-pink-400" /> <a href="tel:+1234567890" className="hover:underline">+123 456 7890</a>
+                        <FaPhone className="text-pink-400" /> {t('footer.phone')}: <a href="tel:+37253464508">+372 5346 4508</a>
                         </p>
                         <p className="flex items-center gap-2 text-lg">
-                        <FaEnvelope className="text-pink-400" /> <a href="mailto:info@example.com" className="hover:underline">info@example.com</a>
+                        <FaEnvelope className="text-pink-400" /> Email: <a href="mailto:viktorijaautokool@hot.ee">viktorijaautokool@hot.ee</a>
                         </p>
                         <p className="flex items-center gap-2 text-lg">
-                        <FaMapMarkerAlt className="text-pink-400" /> ул. Примерная, 123, Москва
+                        <FaMapMarkerAlt className="text-pink-400" /> {t('footer.address')}: <a href="https://g.co/kgs/reQdX5f"> Jaama 1a - 2 korrus, Nõmme keskus, Tallinn 11615</a>
                         </p>
                     </div>
                 </Col>

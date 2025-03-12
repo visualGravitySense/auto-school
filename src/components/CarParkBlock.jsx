@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const CarParkBlock = ({ cars }) => {
   const { t } = useTranslation();
-  const cars = t("about.cars", { returnObjects: true });
+  const translatedCars = t("about.cars", { returnObjects: true });
   return (
     <section className="car-park-block py-5">
       <Container>

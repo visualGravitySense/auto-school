@@ -68,7 +68,7 @@ const Footer = () => {
             {/* 3. Контакты */}
             <Col md={4}>
               <h3>{t('footer.contact')}</h3>
-              <p>{t('footer.phone')}: <a href="tel:+3721234567">+372 123 4567</a></p>
+              <p>{t('footer.phone')}: <a href="tel:+37253464508">+372 5346 4508</a></p>
               <p>Email: <a href="mailto:viktorijaautokool@hot.ee">viktorijaautokool@hot.ee</a></p>
               <p>{t('footer.address')}: <a href="https://g.co/kgs/reQdX5f"> Jaama 1a - 2 korrus, Nõmme keskus, Tallinn 11615</a></p>
             </Col>

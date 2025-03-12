@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 const InstructorsBlock = ({ instructors }) => {
   const { t } = useTranslation();
-  const instructors = t("about.instructors", { returnObjects: true });
+  const translatedInstructors = t("about.instructors", { returnObjects: true });
   return (
     <section className="instructors-block py-5">
       <Container>

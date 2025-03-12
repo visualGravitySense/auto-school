@@ -4,12 +4,15 @@ import PaymentsContactForm from "../components/PaymentsContactForm"
 import { Row, Col } from 'react-bootstrap';
 import ImageGrid from "../components/ImageGrid"
 
+import { useTranslation } from "react-i18next";
+
 const heroData = {
   
   imageUrl: '/images/services.jpg',
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
     return (
       <>
 
