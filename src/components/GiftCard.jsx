@@ -53,11 +53,11 @@ const GiftCard = () => {
 
   return (
     <div className="text-black p-6 rounded-lg w-full max-w-lg mx-auto border-2 border-white">
-      <h2 className="text-2xl font-bold text-center">{t('bestGift')}</h2>
-      <p className="text-center mt-2">{t('forFriends')}</p>
+      <h2 className="text-2xl font-bold text-center">{t('gift.bestGift')}</h2>
+      <p className="text-center mt-2">{t('gift.forFriends')}</p>
 
       <div className="mt-6 text-center">
-        <h3 className="text-lg">{t('chooseAmount')}</h3>
+        <h3 className="text-lg">{t('gift.chooseAmount')}</h3>
         <input 
           type="number"
           value={amount}

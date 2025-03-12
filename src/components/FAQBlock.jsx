@@ -1,22 +1,20 @@
 import React from 'react';
 import { Accordion, Container, Row, Col } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 
-import "./FAQBlock.css"
-
-const faqData = [
-  { question: 'Какие курсы у вас есть?', answer: 'У нас есть курсы по программированию, дизайну, маркетингу и другим направлениям.' },
-  { question: 'Как оплатить курс?', answer: 'Вы можете оплатить курс картой, через PayPal или банковским переводом.' },
-  { question: 'Есть ли рассрочка?', answer: 'Да, у нас доступна рассрочка на некоторые курсы. Свяжитесь с поддержкой для уточнения.' },
-  { question: 'Как долго длится обучение?', answer: 'В зависимости от курса обучение может длиться от 4 недель до нескольких месяцев.' },
-  { question: 'Выдается ли сертификат?', answer: 'Да, после успешного завершения курса вы получите официальный сертификат.' },
-  { question: 'Как получить доступ к курсу?', answer: 'После оплаты вам придет письмо с доступом в личный кабинет.' },
-];
+import './FAQBlock.css'; // Import custom styling
 
 const FAQBlock = () => {
+  const { t } = useTranslation(); // Hook to access translations
+
+  // Dynamically retrieve the FAQ questions and answers from the translations
+  const faqData = t('faq.questions', { returnObjects: true });
+
   return (
     <section className="faq-section py-5">
       <Container>
-        <h2 className="text-center mb-4">FAQ по курсам</h2>
+        <h2 className="text-center mb-4">{t('faq.title')}</h2> {/* Translated title */}
+
         <Row>
           {faqData.map((item, index) => (
             <Col md={6} key={index} className="mb-3">

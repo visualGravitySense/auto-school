@@ -3,14 +3,12 @@ import CoursesList from "../components/CoursesList"
 import ChecklistBlock from "../components/ChecklistBlock"
 import FAQBlock from "../components/FAQBlock"
 import ScheduleBlock from "../components/ScheduleBlock"
-import ContactForm from "../components/ContactForm"
-
 
 const heroData = {
-  title: 'Наши Премиум Услуги',
-  description: 'Изучите широкий спектр услуг, которые помогут вашему бизнесу расти и процветать.',
-  buttonText: 'Узнать больше',
-  buttonLink: '#services',
+  // title: 'Наши Премиум Услуги',
+  // description: 'Изучите широкий спектр услуг, которые помогут вашему бизнесу расти и процветать.',
+  // buttonText: 'Узнать больше',
+  // buttonLink: '#services',
   imageUrl: '/images/services.jpg',
 };
 
@@ -70,24 +68,12 @@ const schedule = [
 
         <CoursesList courses={categories} />
 
-        <ContactForm />
-
+        <ScheduleBlock  />
+        
         <ChecklistBlock />
 
         <FAQBlock />
 
-        <ScheduleBlock schedule={scheduleData} />
-
-        {/* <div className="container mt-5">
-          <h2>Наши курсы</h2>
-          <ul className="list-group">
-            {courses.map(course => (
-              <li key={course.id} className="list-group-item">
-                {course.name} - <strong>{course.price}</strong>
-              </li>
-            ))}
-          </ul>
-        </div> */}
       </>
     );
   };

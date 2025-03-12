@@ -130,8 +130,23 @@
       "amount": "Summa",
       "date": "Kuupäev",
       "studentReviews": "Õpilaste arvustused"
-    
-
+  },
+  "testimonials": {
+    "title": "Õpilaste pärislood",
+    "list": [
+      {
+        "text": "Suurepärane autokool, suurepärased õpetajad. Kõik on kergesti arusaadav. Suurepärane suhtumine õpilastesse! Soovitan kõigile 100%.",
+        "name": "Uliana Zõkova"
+      },
+      {
+        "text": "Kõik on hästi ja arusaadavalt selgitatud. Hea juhtimisõpetus. Paljud mu tuttavad on selle kooliga rahul.",
+        "name": "Sergei"
+      },
+      {
+        "text": "Olen väga õnnelik, et õppisin just selles autokoolis, sest läbisin kõik eksamid esimesel katsel! Suur tänu!",
+        "name": "Aisel Agaeva"
+      }
+    ]
   },
   "advantages": {
     "title": "Meie eelised",
@@ -159,6 +174,46 @@
       }
     ]
   },
+  "checklist": {
+    "title": "Kontrollnimekiri: «Kuidas valida kursus?»",
+    "items": [
+      "Määrake õppeeesmärk",
+      "Hinnake kursuse programmi",
+      "Kontrollige õpetajate kogemust",
+      "Uurige õpilaste tagasisidet",
+      "Kontrollige kursuse maksumust ja tähtaegu"
+    ],
+    "button": "Broneeri kursus"
+  },
+  "faq": {
+    "title": "Korduma kippuvad küsimused kursuste kohta",
+    "questions": [
+      {
+        "question": "Milliseid kursusi teil on?",
+        "answer": "Meil on kursusi programmeerimise, disaini, turunduse ja teiste valdkondade kohta."
+      },
+      {
+        "question": "Kuidas kursust tasuda?",
+        "answer": "Saate tasuda kursuse eest kaardiga, PayPali kaudu või pangaülekandega."
+      },
+      {
+        "question": "Kas on järelmaksuvõimalus?",
+        "answer": "Jah, meil on mõne kursuse jaoks järelmaks. Küsi rohkem teavet tugiteenuse kaudu."
+      },
+      {
+        "question": "Kui kaua kestab õpe?",
+        "answer": "Õpe võib kesta sõltuvalt kursusest 4 nädalast kuni mitme kuuni."
+      },
+      {
+        "question": "Kas antakse sertifikaat?",
+        "answer": "Jah, kursuse edukal lõpetamisel saate ametliku sertifikaadi."
+      },
+      {
+        "question": "Kuidas pääseda kursusele juurde?",
+        "answer": "Pärast makse sooritamist saadetakse teile e-kiri ligipääsuga isiklikule kontole."
+      }
+    ]
+  },
   "tarifComparison": {
     "title": "Paketivõrdlus",
     "plans": ["Põhipakett", "Optimaalne", "Premium"],
@@ -181,14 +236,7 @@
       "optimalPrice": "400€",
       "premiumPrice": "600€"
     },  
-  "testimonials": {
-    "title": "Õpilaste tõelised lood",
-    "reviews": [
-      { "text": "Suurepärane autokool, suurepärased õpetajad.", "author": "Uliana Zõkova" },
-      { "text": "Kõik on hästi ja selgelt selgitatud.", "author": "Sergei" },
-      { "text": "Väga rahul, et õppisin just selles autokoolis!", "author": "Aisel Agaeva" }
-    ]
-  },
+  
   "about": {
     "title": "18 aastat kindluse saavutamiseks roolis",
     "description": "1500 lõpetajat. Professionaalsus. Tulemused.",
