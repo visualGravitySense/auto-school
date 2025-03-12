@@ -52,6 +52,58 @@
     "dark_slippery": "Pimedad ja libedad sõidurajad",
     "winter_driving": "Talvised sõidukursused (loa asendamiseks)"
   },
+  "coursesPrice": {
+      "title": "Hinnad",
+      "columns": {
+        "course": "Kursus",
+        "info": "Lisainfo",
+        "price": "Hind"
+      },
+      "list": [
+        {
+          "id": 1,
+          "name": "Teooriakursus",
+          "info": "Klassitunnid õpetajaga",
+          "price": "140 €"
+        },
+        {
+          "id": 2,
+          "name": "Internetikoolitus",
+          "info": "Kursuse läbimine veebis",
+          "price": "160 €"
+        },
+        {
+          "id": 3,
+          "name": "Sõidukursus (Manuaal)",
+          "info": "Praktiline õpe manuaalkastiga",
+          "price": "700 €"
+        },
+        {
+          "id": 4,
+          "name": "Sõidukursus (Automaat)",
+          "info": "Praktiline õpe automaatkastiga",
+          "price": "840 €"
+        },
+        {
+          "id": 5,
+          "name": "Esmaabi kursus",
+          "info": "Esmaabi andmise koolitus",
+          "price": "40 €"
+        },
+        {
+          "id": 6,
+          "name": "Libedasõit ja pimedasõit",
+          "info": "Ekstreemse juhtimise koolitus",
+          "price": "145 €"
+        },
+        {
+          "id": 7,
+          "name": "Talvesõidu kursus (juhiloa vahetamiseks)",
+          "info": "Ajutise juhiloa vahetamiseks vajalik",
+          "price": "150 €"
+        }
+      ]
+    },
   "giftCard": {
     "title": "Parim kingitus on teadmised!",
     "subtitle": "Sõpradele, pereliikmetele ja kolleegidele",
@@ -64,14 +116,102 @@
     "date": "Kuupäev",
     "reviews": "Õpilaste arvustused"
   },
+  "gift": {
+    
+      "bestGift": "Parim kingitus on teadmine!",
+      "forFriends": "Sõpradele, pereliikmetele ja kolleegidele",
+      "chooseAmount": "Vali summa",
+      "enterDetails": "Vali summa → Sisesta andmed → Maksmine",
+      "createPayment": "Loome makse...",
+      "buyGiftCard": "Osta kinkekaart",
+      "certificatePreview": "Kinkekaardi eelvaade",
+      "certificatePreviewDescription": "Kuidas see välja näeb",
+      "invoice": "Arve #",
+      "amount": "Summa",
+      "date": "Kuupäev",
+      "studentReviews": "Õpilaste arvustused"
+  },
+  "testimonials": {
+    "title": "Õpilaste pärislood",
+    "list": [
+      {
+        "text": "Suurepärane autokool, suurepärased õpetajad. Kõik on kergesti arusaadav. Suurepärane suhtumine õpilastesse! Soovitan kõigile 100%.",
+        "name": "Uliana Zõkova"
+      },
+      {
+        "text": "Kõik on hästi ja arusaadavalt selgitatud. Hea juhtimisõpetus. Paljud mu tuttavad on selle kooliga rahul.",
+        "name": "Sergei"
+      },
+      {
+        "text": "Olen väga õnnelik, et õppisin just selles autokoolis, sest läbisin kõik eksamid esimesel katsel! Suur tänu!",
+        "name": "Aisel Agaeva"
+      }
+    ]
+  },
   "advantages": {
     "title": "Meie eelised",
     "subtitle": "Miks valida meid?",
+    "list": [
+      {
+        "icon": "🚀",
+        "title": "Kiire õppimine",
+        "description": "Omandage oskused lühikese ajaga."
+      },
+      {
+        "icon": "🎓",
+        "title": "Parimad õpetajad",
+        "description": "Õppimine professionaalide juhendamisel."
+      },
+      {
+        "icon": "💼",
+        "title": "Praktiline kasu",
+        "description": "Saage väärtuslikke ja nõutud oskusi."
+      },
+      {
+        "icon": "🌍",
+        "title": "Saadaval veebis",
+        "description": "Õppige igal ajal ja igal pool."
+      }
+    ]
+  },
+  "checklist": {
+    "title": "Kontrollnimekiri: «Kuidas valida kursus?»",
     "items": [
-      { "title": "Kiire õpe", "description": "Omandage oskused lühikese ajaga." },
-      { "title": "Parimad õpetajad", "description": "Õppimine professionaalide juhendamisel." },
-      { "title": "Praktiline kasu", "description": "Hankige nõutud oskused." },
-      { "title": "Saadaval veebis", "description": "Õppige igal ajal ja igas kohas." }
+      "Määrake õppeeesmärk",
+      "Hinnake kursuse programmi",
+      "Kontrollige õpetajate kogemust",
+      "Uurige õpilaste tagasisidet",
+      "Kontrollige kursuse maksumust ja tähtaegu"
+    ],
+    "button": "Broneeri kursus"
+  },
+  "faq": {
+    "title": "Korduma kippuvad küsimused kursuste kohta",
+    "questions": [
+      {
+        "question": "Milliseid kursusi teil on?",
+        "answer": "Meil on kursusi programmeerimise, disaini, turunduse ja teiste valdkondade kohta."
+      },
+      {
+        "question": "Kuidas kursust tasuda?",
+        "answer": "Saate tasuda kursuse eest kaardiga, PayPali kaudu või pangaülekandega."
+      },
+      {
+        "question": "Kas on järelmaksuvõimalus?",
+        "answer": "Jah, meil on mõne kursuse jaoks järelmaks. Küsi rohkem teavet tugiteenuse kaudu."
+      },
+      {
+        "question": "Kui kaua kestab õpe?",
+        "answer": "Õpe võib kesta sõltuvalt kursusest 4 nädalast kuni mitme kuuni."
+      },
+      {
+        "question": "Kas antakse sertifikaat?",
+        "answer": "Jah, kursuse edukal lõpetamisel saate ametliku sertifikaadi."
+      },
+      {
+        "question": "Kuidas pääseda kursusele juurde?",
+        "answer": "Pärast makse sooritamist saadetakse teile e-kiri ligipääsuga isiklikule kontole."
+      }
     ]
   },
   "tarifComparison": {
@@ -79,17 +219,28 @@
     "plans": ["Põhipakett", "Optimaalne", "Premium"],
     "features": ["Tundide arv", "Veebiteooria", "Individuaalne juhendaja", "Eksamil osalemine", "Hind"]
   },
-  "testimonials": {
-    "title": "Õpilaste tõelised lood",
-    "reviews": [
-      { "text": "Suurepärane autokool, suurepärased õpetajad.", "author": "Uliana Zõkova" },
-      { "text": "Kõik on hästi ja selgelt selgitatud.", "author": "Sergei" },
-      { "text": "Väga rahul, et õppisin just selles autokoolis!", "author": "Aisel Agaeva" }
-    ]
-  },
+  
+    "tariff": {
+      "title": "Tariifide võrdlus",
+      "lessons": "Tundide arv",
+      "onlineTheory": "Veebi teooria",
+      "individualInstructor": "Isiklik instruktor",
+      "examGibdd": "Eksam GIBDD-s",
+      "price": "Hind",
+      "basic": "Põhi",
+      "optimal": "Optimaalne",
+      "premium": "Premium",
+      "check": "✅",
+      "cross": "❌",
+      "basicPrice": "250€",
+      "optimalPrice": "400€",
+      "premiumPrice": "600€"
+    },  
+  
   "about": {
     "title": "18 aastat kindluse saavutamiseks roolis",
-    "description": "4500 lõpetajat. Professionaalsus. Tulemused.",
+    "description": "1500 lõpetajat. Professionaalsus. Tulemused.",
+    "images": "Fotogalerii",
     "cars": [
       { "model": "Toyota Corolla", "engine": "1.8 L, 140 hj", "transmission": "Automaat", "fuel": "Bensiin" },
       { "model": "Toyota Corolla", "engine": "1.6 L, 110 hj", "transmission": "Manuaal", "fuel": "Diisel" },
@@ -100,6 +251,18 @@
       { "name": "Maria Sidorova", "experience": 8 },
       { "name": "Aleksandr Kuznetsov", "experience": 12 }
     ]
+  },
+  "instructors": {
+    "title": "Meie instruktorid",
+    "experience": "Kogemus",
+    "reviews": "Hinnangud",
+    "years": "aastat"
+  },
+  "cars": {
+    "title": "Meie autod",
+    "engine": "Mootor",
+    "transmission": "Käigukast",
+    "fuel": "kütus"
   },
   "categories": {
     "title": "Meie kursused",
@@ -193,6 +356,7 @@
     "infoLast": "Kohustuslik kursus juhilubade pikendamiseks"
   },
   "contact": {
-    "title": "Võtke meiega ühendust"
+    "title": "Võtke meiega ühendust",
+    "partner": "Partnerid"
   }
 }

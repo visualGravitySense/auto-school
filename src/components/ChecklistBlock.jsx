@@ -1,41 +1,41 @@
 import React from 'react';
+import { useState } from "react"; 
 import { Button, Container, Row, Col, ListGroup } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 import './ChecklistBlock.css'; // Import the CSS for custom styling
 import { MdCheckCircle } from 'react-icons/md'; // Importing the React icon
 
+import PopUp from "./PopUp";
+import ContactForm from "./ContactForm";
 
-const ChecklistBlock = () => {
+const ChecklistBlock = (  ) => {
+  const { t } = useTranslation(); // Hook to access translations
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+
   return (
     <section className="checklist-block mt-5">
       <Container>
         <Row className="align-items-center">
           <Col md={6}>
-            <h2>Чек-лист: «Как выбрать курс?»</h2>
-            
+            <h2>{t("checklist.title")}</h2> {/* Title translation */}
+
             <ListGroup variant="flush">
-                <ListGroup.Item>
-                    <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
-                    Определитесь с целью обучения
+              {t("checklist.items", { returnObjects: true }).map((item, index) => (
+                <ListGroup.Item key={index}>
+                  <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
+                  {item}
                 </ListGroup.Item>
-                <ListGroup.Item>
-                    <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
-                    Оцените программу курса
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
-                    Проверьте опыт преподавателей
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
-                    Узнайте отзывы студентов
-                </ListGroup.Item>
-                <ListGroup.Item>
-                    <MdCheckCircle style={{ fontSize: '20px', color: 'green', marginRight: '10px' }} />
-                    Проверьте стоимость и сроки курса
-                </ListGroup.Item>
+              ))}
             </ListGroup>
 
-            <Button variant="primary" className="mt-4">Забронировать курс</Button>
+            <Button 
+              onClick={() => setIsPopUpOpen(true)}
+              variant="primary" 
+              // href={} 
+              className="hero-btn">
+                {t('hero.buttonText')} 
+            </Button>
+
           </Col>
           <Col md={6}>
             <img
@@ -46,6 +46,11 @@ const ChecklistBlock = () => {
           </Col>
         </Row>
       </Container>
+
+      <PopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
+        <ContactForm />
+      </PopUp>
+
     </section>
   );
 };

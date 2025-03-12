@@ -3,7 +3,7 @@ import TariffComparison from "../components/TariffComparison"
 import PricingTable from "../components/PricingTable"
 
 const heroData = {
-    buttonLink: '/courses',
+    // buttonLink: '/courses',
     imageUrl: '/images/pricing.jpg',
 };
 
