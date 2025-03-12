@@ -148,6 +148,22 @@
     "plans": ["Базовый", "Оптимальный", "Премиум"],
     "features": ["Кол-во уроков", "Онлайн-теория", "Индивидуальный инструктор", "Экзамен в ГИБДД", "Цена"]
   },
+  "tariff": {
+    "title": "Сравнение тарифов",
+    "lessons": "Кол-во уроков",
+    "onlineTheory": "Онлайн-теория",
+    "individualInstructor": "Индивидуальный инструктор",
+    "examGibdd": "Экзамен в ГИБДД",
+    "price": "Цена",
+    "basic": "Базовый",
+    "optimal": "Оптимальный",
+    "premium": "Премиум",
+    "check": "✅",
+    "cross": "❌",
+    "basicPrice": "250€",
+    "optimalPrice": "400€",
+    "premiumPrice": "600€"
+  },
   "testimonials": {
     "title": "Реальные истории учеников",
     "reviews": [
@@ -226,19 +242,32 @@
     ]
   },
   "about": {
-    "title": "18 лет на пути к вашей уверенности за рулём",
-    "description": "4500 выпускников. Профессионализм. Результат.",
-    "cars": [
-      { "model": "Toyota Corolla", "engine": "1.8 л, 140 л.с.", "transmission": "Автомат", "fuel": "Бензин" },
-      { "model": "Toyota Corolla", "engine": "1.6 л, 110 л.с.", "transmission": "Механика", "fuel": "Дизель" },
-      { "model": "Toyota Corolla", "engine": "1.6 л, 123 л.с.", "transmission": "Автомат", "fuel": "Бензин" }
-    ],
-    "instructors": [
-      { "name": "Иван Петров", "experience": 10 },
-      { "name": "Мария Сидорова", "experience": 8 },
-      { "name": "Александр Кузнецов", "experience": 12 }
-    ]
+  "title": "18 лет уверенности за рулем",
+  "description": "1500 выпускников. Профессионализм. Результаты.",
+  "images": "Фотогалерея",
+  "cars": [
+    { "model": "Toyota Corolla", "engine": "1.8 L, 140 л.с.", "transmission": "Автомат", "fuel": "Бензин" },
+    { "model": "Toyota Corolla", "engine": "1.6 L, 110 л.с.", "transmission": "Механика", "fuel": "Дизель" },
+    { "model": "Toyota Corolla", "engine": "1.6 L, 123 л.с.", "transmission": "Автомат", "fuel": "Бензин" }
+  ],
+  "instructors": [
+    { "name": "Иван Петров", "experience": 10 },
+    { "name": "Мария Сидорова", "experience": 8 },
+    { "name": "Александр Кузнецов", "experience": 12 }
+  ]
+},
+"cars": {
+    "title": "Наши автомобили",
+    "engine": "Двигатель",
+    "transmission": "Трансмиссия",
+    "fuel": "Топливо"
   },
+"instructors": {
+  "title": "Наши инструктора",
+  "experience": "Опыт",
+  "reviews": "Отзывы",
+  "years": "лет"
+},
   "class": {
     "nameTheory": "Курс теории в классе",
     "infoTheory": "Очные занятия с преподавателем",

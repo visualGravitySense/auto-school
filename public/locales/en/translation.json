@@ -164,6 +164,23 @@
     "plans": ["Põhipakett", "Optimaalne", "Premium"],
     "features": ["Tundide arv", "Veebiteooria", "Individuaalne juhendaja", "Eksamil osalemine", "Hind"]
   },
+  
+    "tariff": {
+      "title": "Tariifide võrdlus",
+      "lessons": "Tundide arv",
+      "onlineTheory": "Veebi teooria",
+      "individualInstructor": "Isiklik instruktor",
+      "examGibdd": "Eksam GIBDD-s",
+      "price": "Hind",
+      "basic": "Põhi",
+      "optimal": "Optimaalne",
+      "premium": "Premium",
+      "check": "✅",
+      "cross": "❌",
+      "basicPrice": "250€",
+      "optimalPrice": "400€",
+      "premiumPrice": "600€"
+    },  
   "testimonials": {
     "title": "Õpilaste tõelised lood",
     "reviews": [
@@ -174,7 +191,8 @@
   },
   "about": {
     "title": "18 aastat kindluse saavutamiseks roolis",
-    "description": "4500 lõpetajat. Professionaalsus. Tulemused.",
+    "description": "1500 lõpetajat. Professionaalsus. Tulemused.",
+    "images": "Fotogalerii",
     "cars": [
       { "model": "Toyota Corolla", "engine": "1.8 L, 140 hj", "transmission": "Automaat", "fuel": "Bensiin" },
       { "model": "Toyota Corolla", "engine": "1.6 L, 110 hj", "transmission": "Manuaal", "fuel": "Diisel" },
@@ -185,6 +203,18 @@
       { "name": "Maria Sidorova", "experience": 8 },
       { "name": "Aleksandr Kuznetsov", "experience": 12 }
     ]
+  },
+  "instructors": {
+    "title": "Meie instruktorid",
+    "experience": "Kogemus",
+    "reviews": "Hinnangud",
+    "years": "aastat"
+  },
+  "cars": {
+    "title": "Meie autod",
+    "engine": "Mootor",
+    "transmission": "Käigukast",
+    "fuel": "kütus"
   },
   "categories": {
     "title": "Meie kursused",
