@@ -1,10 +1,11 @@
-
 {
   "navbar": {
-    "home": "Avaleht",
-    "courses": "Kursused",
-    "about": "Meist",
-    "price": "Hinnad",
-    "contact": "Kontakt"
+    "home": "Home",
+    "courses": "Courses",
+    "schedule": "Schedule",
+    "about": "About Us",
+    "price": "Prices",
+    "contact": "Contact",
+    "profile": "Profile"
   }
 }
