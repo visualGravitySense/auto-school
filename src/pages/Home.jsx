@@ -17,11 +17,11 @@ const Home = () => {
 
             <GiftCard />
             
-            <Advantages />
+            {/* <Advantages /> */}
 
             <TariffComparison />
 
-            <Testimonials />
+            {/* <Testimonials /> */}
         </>
     );
   };

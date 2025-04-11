@@ -2,8 +2,10 @@
   "navbar": {
     "home": "Avaleht",
     "courses": "Kursused",
+    "schedule": "Ajakava",
     "about": "Meist",
     "price": "Hinnad",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "profile": "Profiil"
   }
 }
