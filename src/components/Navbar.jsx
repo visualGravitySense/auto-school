@@ -62,10 +62,10 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); 
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleLanguageChange = (lang) => {
+  const handleLanguageChange = (lang) => {  
     i18n.changeLanguage(lang);
     localStorage.setItem("i18nextLng", lang);
   };
@@ -250,7 +250,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
 
 
 
