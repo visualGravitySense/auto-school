@@ -7,5 +7,55 @@
     "price": "Prices",
     "contact": "Contact",
     "profile": "Profile"
+  },
+  "home": {
+    "hero": {
+      "title": "Start Your Journey to Freedom",
+      "subtitle": "Learn to drive with confidence from experienced instructors",
+      "ctaText": "Book Your First Lesson"
+    },
+    "stats": {
+      "experience": "Years of Experience",
+      "passRate": "Pass Rate",
+      "graduates": "Happy Graduates"
+    },
+    "features": {
+      "experience": {
+        "title": "Expert Instructors",
+        "description": "Learn from certified professionals with years of teaching experience"
+      },
+      "flexibility": {
+        "title": "Flexible Scheduling",
+        "description": "Choose lesson times that fit your busy schedule"
+      },
+      "schedule": {
+        "title": "Structured Learning",
+        "description": "Follow our proven curriculum designed for optimal learning"
+      }
+    },
+    "consideration": {
+      "title": "Why Choose Viktorija Driving School?",
+      "subtitle": "Discover what makes our driving school the best choice for you"
+    },
+    "decision": {
+      "title": "Compare Our Packages",
+      "subtitle": "Find the perfect driving course for your needs and budget"
+    },
+    "giftCard": {
+      "title": "Special Offer",
+      "subtitle": "Get a gift card for your friend or family member"
+    },
+    "testimonials": {
+      "title": "What Our Students Say",
+      "subtitle": "Join our community of successful drivers"
+    },
+    "cta": {
+      "title": "Ready to Start Your Journey?",
+      "subtitle": "Book your first lesson today and take the first step toward driving freedom",
+      "button": "Book Your First Lesson Now"
+    },
+    "stickyCta": {
+      "text": "Book Now"
+    }
   }
 }
