@@ -1,163 +1,168 @@
-// import { Link } from "react-router-dom";
-// import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
-// import { useTranslation } from 'react-i18next';
-
-// const Navbar = () => {
-//   const { t, i18n } = useTranslation(); 
-//   // const { t } = useTranslation();
-
-//   // const handleLanguageChange = (lang) => {  
-//   //   i18n.changeLanguage(lang);  // This changes the language
-//   //   localStorage.setItem("i18nextLng", lang); // Сохраняем язык
-//   // };
-
-//   const handleLanguageChange = (lang) => {  
-//     console.log("Меняем язык на:", lang); // ✅ Проверка в консоли
-//     i18n.changeLanguage(lang);
-//     localStorage.setItem("i18nextLng", lang);
-//   };
-
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      
-//       <div className="container">
-//         <Link className="navbar-brand" to="/">Viktorija</Link>
-//         <div className="collapse navbar-collapse">
-//           {/* <a href="/">{t("navbar.home")}</a> */}
-//           <ul className="navbar-nav ms-auto">
-//             <li className="nav-item"><Link className="nav-link" to="/">{t('navbar.home')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/courses">{t('navbar.courses')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/about">{t('navbar.about')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/price">{t('navbar.price')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/contact">{t('navbar.contact')}</Link></li>
-//           </ul>
-
-//           {/* Переключение языков */}
-//           <button onClick={() => handleLanguageChange('en')}>ee</button>
-//           <button onClick={() => handleLanguageChange('et')}>ru</button>
-//           {/* <button onClick={() => handleLanguageChange('ru')}>ru</button> */}
-//           {/* <button onClick={() => i18n.changeLanguage('et')} className="btn btn-outline-light mx-2">EE</button>
-//           <button onClick={() => i18n.changeLanguage('ru')} className="btn btn-outline-light">RU</button> */}
-//         </div>
-
-//         <div>
-//           <a href="https://t.me/yourtelegram" className="text-primary" aria-label="Telegram">
-//             <FaTelegramPlane size={20} />
-//           </a>
-//           <a href="https://wa.me/yourwhatsapp" className="text-success mx-3" aria-label="WhatsApp">
-//             <FaWhatsapp size={20} />
-//           </a>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
 import { Link } from "react-router-dom";
-import { FaTelegramPlane, FaWhatsapp, FaHome, FaBook, FaCalendarAlt, FaInfoCircle, FaTag, FaEnvelope, FaUser } from 'react-icons/fa';
+import { FaTelegramPlane, FaWhatsapp, FaHome, FaBook, FaCalendarAlt, FaInfoCircle, FaTag, FaEnvelope, FaUser, FaGlobe, FaChevronDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation(); 
   const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState('');
+  const [scrolled, setScrolled] = useState(false);
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
 
+  // Track scroll position for visual feedback (System 1)
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+
+  // Set active item based on current path (System 2)
+  useEffect(() => {
+    const path = window.location.pathname;
+    setActiveItem(path);
+  }, []);
+
+  // Handle language change (System 2)
   const handleLanguageChange = (lang) => {  
     i18n.changeLanguage(lang);
     localStorage.setItem("i18nextLng", lang);
+    setShowLanguageMenu(false);
   };
 
+  // Toggle mobile menu (System 1)
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  // Navigation items with icons for visual recognition (System 1)
+  const navItems = [
+    { path: '/', icon: <FaHome className="mr-2" />, label: t('navbar.home') },
+    { path: '/courses', icon: <FaBook className="mr-2" />, label: t('navbar.courses') },
+    { path: '/schedule', icon: <FaCalendarAlt className="mr-2" />, label: t('navbar.schedule') },
+    { path: '/about', icon: <FaInfoCircle className="mr-2" />, label: t('navbar.about') },
+    { path: '/price', icon: <FaTag className="mr-2" />, label: t('navbar.price') },
+    { path: '/contact', icon: <FaEnvelope className="mr-2" />, label: t('navbar.contact') },
+    { path: '/profile', icon: <FaUser className="mr-2" />, label: t('navbar.profile') }
+  ];
+
   return (
-    <nav className="bg-gray-800">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-800'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - System 1: Visual recognition */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-white text-xl font-bold">
-              Viktorija
+            <Link to="/" className="text-white text-xl font-bold flex items-center transform hover:scale-105 transition-transform">
+              <span className="text-blue-400">Viktorija</span>
             </Link>
           </div>
 
-          {/* Desktop menu */}
+          {/* Desktop menu - System 2: Deliberate navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaHome className="mr-2" /> {t('navbar.home')}
-              </Link>
-              <Link to="/courses" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaBook className="mr-2" /> {t('navbar.courses')}
-              </Link>
-              <Link to="/schedule" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaCalendarAlt className="mr-2" /> {t('navbar.schedule')}
-              </Link>
-              <Link to="/about" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaInfoCircle className="mr-2" /> {t('navbar.about')}
-              </Link>
-              <Link to="/price" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaTag className="mr-2" /> {t('navbar.price')}
-              </Link>
-              <Link to="/contact" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaEnvelope className="mr-2" /> {t('navbar.contact')}
-              </Link>
-              <Link to="/profile" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-                <FaUser className="mr-2" /> {t('navbar.profile')}
-              </Link>
+              {navItems.map((item) => (
+                <Link 
+                  key={item.path}
+                  to={item.path} 
+                  className={`px-3 py-2 rounded-md text-sm font-medium flex items-center transition-all duration-200 ${
+                    activeItem === item.path 
+                      ? 'bg-blue-600 text-white' 
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
+                  }`}
+                  onClick={() => setActiveItem(item.path)}
+                >
+                  {item.icon} {item.label}
+                </Link>
+              ))}
             </div>
           </div>
 
-          {/* Right side buttons */}
+          {/* Right side buttons - System 1 & 2 integration */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Language selector */}
+            {/* Language selector - System 2: Deliberate choice */}
             <div className="relative">
               <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                onClick={() => handleLanguageChange('en')}
+                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white flex items-center"
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
               >
-                EN
+                <FaGlobe className="mr-2" />
+                {i18n.language.toUpperCase()}
+                <FaChevronDown className="ml-2" />
               </button>
-              <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ml-2"
-                onClick={() => handleLanguageChange('et')}
-              >
-                ET
-              </button>
-              <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white ml-2"
-                onClick={() => handleLanguageChange('ru')}
-              >
-                RU
-              </button>
+              
+              {/* Language dropdown - System 2 */}
+              {showLanguageMenu && (
+                <div className="absolute right-0 mt-2 w-24 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="py-1" role="menu" aria-orientation="vertical">
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => handleLanguageChange('en')}
+                    >
+                      English
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => handleLanguageChange('et')}
+                    >
+                      Eesti
+                    </button>
+                    <button
+                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => handleLanguageChange('ru')}
+                    >
+                      Русский
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Social links */}
+            {/* Social links - System 1: Quick access to familiar platforms */}
             <div className="flex space-x-4">
               <a
                 href="https://t.me/viktorijaschool"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white transform hover:scale-110 transition-transform"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram"
               >
                 <FaTelegramPlane className="h-5 w-5" />
               </a>
               <a
                 href="https://wa.me/37255555555"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white transform hover:scale-110 transition-transform"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp"
               >
                 <FaWhatsapp className="h-5 w-5" />
               </a>
             </div>
+            
+            {/* CTA Button - Action Funnel: Clear path to conversion */}
+            <Link 
+              to="/contact" 
+              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-md transform hover:scale-105"
+            >
+              {t('navbar.bookNow')}
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - System 1: Intuitive access */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              aria-expanded={isOpen}
+              aria-label="Toggle navigation menu"
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -174,48 +179,56 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <Link to="/" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaHome className="mr-2" /> {t('navbar.home')}
-          </Link>
-          <Link to="/courses" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaBook className="mr-2" /> {t('navbar.courses')}
-          </Link>
-          <Link to="/schedule" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaCalendarAlt className="mr-2" /> {t('navbar.schedule')}
-          </Link>
-          <Link to="/about" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaInfoCircle className="mr-2" /> {t('navbar.about')}
-          </Link>
-          <Link to="/price" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaTag className="mr-2" /> {t('navbar.price')}
-          </Link>
-          <Link to="/contact" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaEnvelope className="mr-2" /> {t('navbar.contact')}
-          </Link>
-          <Link to="/profile" className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium flex items-center">
-            <FaUser className="mr-2" /> {t('navbar.profile')}
-          </Link>
+      {/* Mobile menu - System 1 & 2 integration */}
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden transition-all duration-300 ease-in-out`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 shadow-lg">
+          {navItems.map((item) => (
+            <Link 
+              key={item.path}
+              to={item.path} 
+              className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                activeItem === item.path 
+                  ? 'bg-blue-600 text-white' 
+                  : 'text-gray-300 hover:text-white hover:bg-gray-700'
+              }`}
+              onClick={() => {
+                setActiveItem(item.path);
+                setIsOpen(false);
+              }}
+            >
+              {item.icon} {item.label}
+            </Link>
+          ))}
           
-          {/* Mobile language selector */}
+          {/* Mobile language selector - System 2 */}
           <div className="pt-4 pb-3 border-t border-gray-700">
             <div className="flex items-center px-5 space-x-3">
               <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600"
+                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                  i18n.language === 'en' 
+                    ? 'bg-blue-600 text-white' 
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
                 onClick={() => handleLanguageChange('en')}
               >
                 EN
               </button>
               <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600"
+                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                  i18n.language === 'et' 
+                    ? 'bg-blue-600 text-white' 
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
                 onClick={() => handleLanguageChange('et')}
               >
                 ET
               </button>
               <button
-                className="bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-600"
+                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                  i18n.language === 'ru' 
+                    ? 'bg-blue-600 text-white' 
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
                 onClick={() => handleLanguageChange('ru')}
               >
                 RU
@@ -223,25 +236,40 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile social links */}
+          {/* Mobile social links - System 1 */}
           <div className="pt-4 pb-3 border-t border-gray-700">
             <div className="flex items-center px-5 space-x-4">
               <a
                 href="https://t.me/viktorijaschool"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white transform hover:scale-110 transition-transform"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram"
               >
                 <FaTelegramPlane className="h-5 w-5" />
               </a>
               <a
                 href="https://wa.me/37255555555"
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white transform hover:scale-110 transition-transform"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp"
               >
                 <FaWhatsapp className="h-5 w-5" />
               </a>
+            </div>
+          </div>
+          
+          {/* Mobile CTA - Action Funnel */}
+          <div className="pt-4 pb-3 border-t border-gray-700">
+            <div className="px-5">
+              <Link 
+                to="/contact" 
+                className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-md"
+                onClick={() => setIsOpen(false)}
+              >
+                {t('navbar.bookNow')}
+              </Link>
             </div>
           </div>
         </div>
@@ -251,90 +279,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-// import { Link } from "react-router-dom";
-// import { FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
-// import { useTranslation } from 'react-i18next';
-// import { useState } from 'react';
-// // import './Navbar.css';
-
-// const Navbar = () => {
-//   const { t, i18n } = useTranslation();
-//   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
-//   const handleLanguageChange = (lang) => {
-//     i18n.changeLanguage(lang);
-//     localStorage.setItem("i18nextLng", lang);
-//   };
-
-//   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
-
-//   return (
-//     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-//       <div className="container">
-//         <Link className="navbar-brand" to="/">Viktorija</Link>
-        
-//         <button 
-//           className="navbar-toggler" 
-//           type="button" 
-//           onClick={handleNavCollapse}
-//           aria-controls="navbarContent" 
-//           aria-expanded={!isNavCollapsed} 
-//           aria-label="Toggle navigation"
-//         >
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-        
-//         <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarContent">
-//           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-//             <li className="nav-item"><Link className="nav-link" to="/">{t('navbar.home')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/courses">{t('navbar.courses')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/about">{t('navbar.about')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/price">{t('navbar.price')}</Link></li>
-//             <li className="nav-item"><Link className="nav-link" to="/contact">{t('navbar.contact')}</Link></li>
-//           </ul>
-
-//           <div className="d-flex align-items-center">
-//             <div className="language-selector me-3">
-//               <button 
-//                 onClick={() => handleLanguageChange('en')} 
-//                 className="btn btn-outline-light btn-sm me-2"
-//                 aria-label="Switch to English"
-//               >
-//                 EN
-//               </button>
-//               <button 
-//                 onClick={() => handleLanguageChange('et')} 
-//                 className="btn btn-outline-light btn-sm me-2"
-//                 aria-label="Switch to Estonian"
-//               >
-//                 ET
-//               </button>
-//               <button 
-//                 onClick={() => handleLanguageChange('ru')} 
-//                 className="btn btn-outline-light btn-sm"
-//                 aria-label="Switch to Russian"
-//               >
-//                 RU
-//               </button>
-//             </div>
-            
-//             <div className="social-links">
-//               <a href="https://t.me/viktorijaschool" className="text-primary me-2" aria-label="Telegram">
-//                 <FaTelegramPlane size={20} />
-//               </a>
-//               <a href="https://wa.me/37255555555" className="text-success" aria-label="WhatsApp">
-//                 <FaWhatsapp size={20} />
-//               </a>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
