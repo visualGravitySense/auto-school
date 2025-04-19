@@ -604,16 +604,16 @@ const FAQBlock = () => {
 
 // Main Courses component
 const Courses = () => {
-  return (
-    <>
-      <HeroBlock {...heroData} />
-      <CoursesList courses={categories} />
+    return (
+      <>
+        <HeroBlock {...heroData} />
+        <CoursesList courses={categories} />
       <ScheduleBlock schedule={schedule} />
-      <ChecklistBlock />
-      <FAQBlock />
-    </>
-  );
-};
-
-export default Courses;
+        <ChecklistBlock />
+        <FAQBlock />
+      </>
+    );
+  };
+  
+  export default Courses;
   

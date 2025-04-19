@@ -145,39 +145,39 @@ const GiftCard = () => {
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaEuroSign className="text-gray-400" />
                 </div>
-                <input 
-                  type="number"
-                  value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+        <input 
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
                   className="pl-10 w-full p-3 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:ring-2 focus:ring-purple-200 transition-all duration-300"
                   placeholder="Enter amount"
-                />
+        />
               </div>
-            </div>
-            
+      </div>
+
             <p className="text-sm text-gray-500 mb-6">{t('gift.enterDetails')}</p>
-            
-            <button 
+
+      <button 
               className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-all duration-300 ${
                 isLoading
                   ? 'bg-gray-400 cursor-not-allowed'
                   : 'bg-purple-600 hover:bg-purple-700 transform hover:scale-105'
               }`}
-              onClick={handlePayment}
+        onClick={handlePayment}
               disabled={isLoading}
             >
-              {isLoading ? t('gift.createPayment') : t('gift.buyGiftCard')}
-            </button>
-            
+          {isLoading ? t('gift.createPayment') : t('gift.buyGiftCard')}
+      </button>
+
             {/* Success message - System 1: Positive feedback */}
             {showSuccess && (
               <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
                 <FaCheck className="text-green-500 mr-2" />
                 <span className="text-green-700">{t('gift.paymentSuccess')}</span>
-              </div>
-            )}
           </div>
-          
+        )}
+      </div>
+
           {/* Preview - System 1 & 2 integration */}
           <div className="bg-white p-8 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('gift.certificatePreview')}</h3>

@@ -137,8 +137,8 @@ const Advantages = () => {
               >
                 <div className="text-2xl mr-4">
                   {method.icon}
-                </div>
-                <div>
+        </div>
+              <div>
                   <h4 className="font-semibold text-gray-900">{method.title}</h4>
                   <p className="text-gray-600">{method.value}</p>
                   <span className="text-blue-600 text-sm flex items-center mt-1">
@@ -147,8 +147,8 @@ const Advantages = () => {
                 </div>
               </a>
             ))}
-          </div>
-        </div>
+              </div>
+            </div>
 
         {/* CTA - Action Funnel */}
         <div className="text-center">
