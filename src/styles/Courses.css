@@ -1,0 +1,179 @@
+/* Courses Page Styles */
+.courses-page {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Popular Courses Section */
+.popular-course-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popular-course-card:hover {
+  transform: translateY(-5px);
+  border-color: #28a745;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.popular-course-card .badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Course Cards */
+.course-card {
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+  background: white;
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Social Proof Notifications */
+.social-proof-notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  max-width: 300px;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Commitment Prompt */
+.commitment-prompt {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  max-width: 300px;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Stats Display */
+.stats-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courses-page {
+    padding: 1rem 0;
+  }
+
+  .popular-course-card,
+  .course-card {
+    margin-bottom: 1rem;
+  }
+
+  .social-proof-notification,
+  .commitment-prompt {
+    max-width: 100%;
+    margin: 0 1rem;
+  }
+
+  .stats-container {
+    flex-direction: column;
+  }
+}
+
+/* Animation Classes */
+.fade-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Progress Indicators */
+.progress-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .course-card,
+  .popular-course-card,
+  .social-proof-notification,
+  .commitment-prompt {
+    transition: none;
+    animation: none;
+  }
+} 

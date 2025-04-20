@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
-import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaArrowRight, FaCheck, FaInfoCircle } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaArrowRight, FaCheck, FaInfoCircle, 
+         FaUsers, FaStar, FaThumbsUp, FaRegClock, FaRegCalendarAlt, FaRegHandshake } from 'react-icons/fa';
 import ContactBlock from "../components/ContactBlock"
 import HeroBlock from "../components/HeroBlock"
 import PaymentsContactForm from "../components/PaymentsContactForm"
@@ -27,6 +28,29 @@ const Contact = () => {
   const [formFocused, setFormFocused] = useState(false);
   const [formProgress, setFormProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Nudge Theory enhancements
+  const [showSocialProof, setShowSocialProof] = useState(false);
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState('morning'); // Default time preference
+  const [showCommitmentPrompt, setShowCommitmentPrompt] = useState(false);
+  const [userCommitment, setUserCommitment] = useState(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+
+  // Social proof data
+  const socialProofData = {
+    recentContacts: 15,
+    averageResponseTime: '15 minutes',
+    satisfactionRate: '98%',
+    activeUsers: Math.floor(Math.random() * 10) + 5 // Random number between 5-15
+  };
+
+  // Time slot options with smart defaults
+  const timeSlots = [
+    { id: 'morning', label: t('contact.timeSlots.morning'), icon: <FaRegClock />, default: true },
+    { id: 'afternoon', label: t('contact.timeSlots.afternoon'), icon: <FaRegClock /> },
+    { id: 'evening', label: t('contact.timeSlots.evening'), icon: <FaRegClock /> }
+  ];
 
   // Track section visibility for animations
   useEffect(() => {
@@ -68,6 +92,33 @@ const Contact = () => {
     visible: { opacity: 1, y: 0 }
   };
 
+  // Show social proof notification periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowSocialProof(true);
+      setTimeout(() => setShowSocialProof(false), 5000);
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Handle time slot selection with default option
+  const handleTimeSlotSelect = (slotId) => {
+    setSelectedTimeSlot(slotId);
+    setShowFeedback(true);
+    setFeedbackMessage(t('contact.feedback.timeSlotSelected'));
+    setTimeout(() => setShowFeedback(false), 3000);
+  };
+
+  // Handle user commitment
+  const handleCommitment = (commitment) => {
+    setUserCommitment(commitment);
+    setShowCommitmentPrompt(false);
+    setShowFeedback(true);
+    setFeedbackMessage(t('contact.feedback.commitmentRecorded'));
+    setTimeout(() => setShowFeedback(false), 3000);
+  };
+
   return (
     <div className="contact-page">
       {/* Hero Section - System 1: Initial Impression */}
@@ -80,6 +131,39 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
       >
         <HeroBlock {...heroData} />
+      </motion.section>
+
+      {/* Social Proof Section - Nudge Theory */}
+      <motion.section 
+        className="bg-white py-8 border-b"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            <div className="p-4">
+              <FaUsers className="text-3xl text-blue-600 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900">{socialProofData.recentContacts}</div>
+              <div className="text-sm text-gray-600">{t('contact.socialProof.recentContacts')}</div>
+            </div>
+            <div className="p-4">
+              <FaRegClock className="text-3xl text-green-600 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900">{socialProofData.averageResponseTime}</div>
+              <div className="text-sm text-gray-600">{t('contact.socialProof.responseTime')}</div>
+            </div>
+            <div className="p-4">
+              <FaStar className="text-3xl text-yellow-600 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900">{socialProofData.satisfactionRate}</div>
+              <div className="text-sm text-gray-600">{t('contact.socialProof.satisfaction')}</div>
+            </div>
+            <div className="p-4">
+              <FaUsers className="text-3xl text-purple-600 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-gray-900">{socialProofData.activeUsers}</div>
+              <div className="text-sm text-gray-600">{t('contact.socialProof.activeUsers')}</div>
+            </div>
+          </div>
+        </div>
       </motion.section>
 
       {/* Contact Info Section - System 1 & 2: Quick Access & Detailed Info */}
@@ -148,6 +232,42 @@ const Contact = () => {
                 {t('contact.viewMap')} <FaArrowRight className="ml-2" />
               </a>
             </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Preferred Time Selection - Nudge Theory Default Option */}
+      <motion.section 
+        className="py-8 bg-gray-50"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
+            {t('contact.timePreference')}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {timeSlots.map((slot) => (
+              <motion.button
+                key={slot.id}
+                className={`p-4 rounded-lg border-2 ${
+                  selectedTimeSlot === slot.id 
+                    ? 'border-blue-600 bg-blue-50' 
+                    : 'border-gray-200 hover:border-blue-300'
+                } flex items-center justify-center gap-2 transition-all`}
+                onClick={() => handleTimeSlotSelect(slot.id)}
+                whileHover={{ scale: 1.02 }}
+              >
+                {slot.icon}
+                <span>{slot.label}</span>
+                {slot.default && (
+                  <span className="ml-2 text-sm text-blue-600">
+                    ({t('contact.recommended')})
+                  </span>
+                )}
+              </motion.button>
+            ))}
           </div>
         </div>
       </motion.section>
@@ -222,6 +342,74 @@ const Contact = () => {
           </Row>
         </div>
       </motion.section>
+
+      {/* Commitment Device - Nudge Theory */}
+      {showCommitmentPrompt && (
+        <motion.div 
+          className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white p-6 rounded-lg shadow-lg max-w-md w-full mx-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+        >
+          <h4 className="text-lg font-semibold mb-4">{t('contact.commitment.title')}</h4>
+          <p className="text-gray-600 mb-4">{t('contact.commitment.description')}</p>
+          <div className="flex flex-col gap-2">
+            <button
+              className="commitment-btn"
+              onClick={() => handleCommitment('schedule')}
+            >
+              <FaRegCalendarAlt /> {t('contact.commitment.schedule')}
+            </button>
+            <button
+              className="commitment-btn"
+              onClick={() => handleCommitment('learn')}
+            >
+              <FaRegHandshake /> {t('contact.commitment.learn')}
+            </button>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Social Proof Notification */}
+      <AnimatePresence>
+        {showSocialProof && (
+          <motion.div 
+            className="social-proof-notification"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+          >
+            <div className="social-proof-content">
+              <FaUsers className="social-proof-icon" />
+              <div className="social-proof-text">
+                <p className="social-proof-title">{t('contact.socialProof.notification.title')}</p>
+                <p className="social-proof-message">
+                  {t('contact.socialProof.notification.message', {
+                    count: socialProofData.recentContacts
+                  })}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Feedback Notification */}
+      <AnimatePresence>
+        {showFeedback && (
+          <motion.div 
+            className="feedback-notification"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+          >
+            <div className="feedback-content">
+              <FaThumbsUp className="feedback-icon" />
+              <p className="feedback-message">{feedbackMessage}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Gallery Section - System 1: Visual Appeal */}
       <motion.section 

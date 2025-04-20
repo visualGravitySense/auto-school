@@ -1,0 +1,319 @@
+/* About Page Styles */
+.about-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Progress Bar */
+.progress-bar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1000;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Social Proof Stats */
+.social-proof-stats {
+  margin-top: 4rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* History Section */
+.history-section {
+  padding: 6rem 0;
+  background: #f9fafb;
+}
+
+.history-content {
+  padding: 2rem;
+}
+
+.history-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.history-content p {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.history-image {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.history-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Commitment Options */
+.commitment-options {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.commitment-options h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.commitment-options p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.commitment-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.commitment-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 2px solid #4f46e5;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  color: #4f46e5;
+}
+
+.commitment-btn:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.commitment-btn.primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.commitment-btn.primary:hover {
+  background: #4338ca;
+  border-color: #4338ca;
+}
+
+/* Social Proof Notification */
+.social-proof-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  z-index: 50;
+}
+
+.social-proof-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.social-proof-icon {
+  font-size: 1.5rem;
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.social-proof-text {
+  flex: 1;
+}
+
+.social-proof-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.social-proof-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.social-proof-date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Feedback Notification */
+.feedback-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  z-index: 50;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feedback-icon {
+  font-size: 1.5rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.feedback-message {
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.125rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commitment-buttons {
+    flex-direction: column;
+  }
+
+  .commitment-btn {
+    width: 100%;
+  }
+
+  .social-proof-notification,
+  .feedback-notification {
+    right: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .history-content {
+    padding: 1rem;
+  }
+
+  .commitment-options {
+    padding: 1.5rem;
+  }
+} 

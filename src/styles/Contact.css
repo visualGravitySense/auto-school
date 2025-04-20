@@ -1,0 +1,319 @@
+/* Contact Page Styles */
+.contact-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Social Proof Section */
+.social-proof-section {
+  padding: 2rem 0;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.social-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.social-proof-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-proof-item:hover {
+  transform: translateY(-5px);
+}
+
+.social-proof-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4f46e5;
+}
+
+.social-proof-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.social-proof-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Time Slot Selection */
+.time-slot-section {
+  padding: 3rem 0;
+  background: #f9fafb;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.time-slot-option {
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.time-slot-option:hover {
+  border-color: #4f46e5;
+  transform: translateY(-2px);
+}
+
+.time-slot-option.active {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.time-slot-icon {
+  font-size: 1.5rem;
+  color: #4f46e5;
+}
+
+.time-slot-label {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.time-slot-recommended {
+  font-size: 0.75rem;
+  color: #4f46e5;
+  margin-left: auto;
+}
+
+/* Commitment Device */
+.commitment-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: calc(100% - 2rem);
+  z-index: 50;
+}
+
+.commitment-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.commitment-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.commitment-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: white;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.75rem;
+}
+
+.commitment-btn:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.commitment-btn:last-child {
+  margin-bottom: 0;
+}
+
+/* Social Proof Notification */
+.social-proof-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  z-index: 50;
+}
+
+.social-proof-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-proof-icon {
+  font-size: 1.5rem;
+  color: #4f46e5;
+  flex-shrink: 0;
+}
+
+.social-proof-text {
+  flex: 1;
+}
+
+.social-proof-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.social-proof-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Feedback Notification */
+.feedback-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  z-index: 50;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feedback-icon {
+  font-size: 1.5rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.feedback-message {
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Form Progress */
+.form-progress {
+  margin-bottom: 2rem;
+}
+
+.form-progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.form-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, #4f46e5, #7c3aed);
+  transition: width 0.3s ease;
+}
+
+.form-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Form Focus Indicator */
+.form-focus-indicator {
+  padding: 1rem;
+  background: #eef2ff;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+}
+
+.form-focus-icon {
+  font-size: 1.25rem;
+  color: #4f46e5;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.form-focus-text {
+  font-size: 0.875rem;
+  color: #4f46e5;
+  line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .social-proof-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .time-slot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-proof-notification,
+  .feedback-notification {
+    right: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .commitment-container {
+    bottom: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .social-proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-proof-item {
+    padding: 1rem;
+  }
+
+  .social-proof-value {
+    font-size: 1.5rem;
+  }
+
+  .commitment-btn {
+    padding: 0.5rem;
+  }
+} 

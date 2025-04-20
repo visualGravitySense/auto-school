@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FaArrowRight, FaStar, FaCar, FaUser, FaHistory, FaCamera, FaCheck, FaPhone, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaAward, FaUsers } from 'react-icons/fa';
+import { FaArrowRight, FaStar, FaCar, FaUser, FaHistory, FaCamera, FaCheck, FaPhone, FaEnvelope, FaMapMarkerAlt, FaGraduationCap, FaAward, FaUsers, FaThumbsUp, FaRegClock, FaRegCalendarAlt, FaRegHandshake, FaRegLightbulb } from 'react-icons/fa';
 import { Container, Row, Col, Card, Button, Modal, ProgressBar } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import HeroBlock from "../components/HeroBlock"
@@ -98,6 +98,44 @@ const About = () => {
   const [isVisible, setIsVisible] = useState(false);
   const aboutRef = useRef(null);
 
+  // Nudge Theory enhancements
+  const [showSocialProof, setShowSocialProof] = useState(false);
+  const [showCommitmentPrompt, setShowCommitmentPrompt] = useState(false);
+  const [userCommitment, setUserCommitment] = useState(null);
+  const [showFeedback, setShowFeedback] = useState(false);
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  // Social proof data
+  const socialProofData = {
+    totalStudents: '4500+',
+    successRate: '98%',
+    avgRating: '4.9',
+    activeInstructors: '15+'
+  };
+
+  // Recent success stories for social proof
+  const recentSuccesses = [
+    {
+      name: 'Sarah M.',
+      achievement: 'Passed first try',
+      date: '2 days ago',
+      quote: 'Best driving school experience ever!'
+    },
+    {
+      name: 'John D.',
+      achievement: 'Perfect score',
+      date: '1 week ago',
+      quote: 'Professional instructors made all the difference'
+    },
+    {
+      name: 'Emma W.',
+      achievement: 'Zero mistakes',
+      date: '3 days ago',
+      quote: 'Couldn\'t have done it without their support'
+    }
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'history', 'instructors', 'car-park'];
@@ -144,9 +182,29 @@ const About = () => {
     };
   }, []);
 
+  // Show social proof notification periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % recentSuccesses.length);
+      setShowSocialProof(true);
+      setTimeout(() => setShowSocialProof(false), 5000);
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const handleInstructorClick = (instructor) => {
     setSelectedInstructor(instructor);
     setShowModal(true);
+  };
+
+  // Handle commitment selection
+  const handleCommitment = (type) => {
+    setUserCommitment(type);
+    setShowCommitmentPrompt(false);
+    setShowFeedback(true);
+    setFeedbackMessage(t('about.feedback.commitmentRecorded'));
+    setTimeout(() => setShowFeedback(false), 3000);
   };
 
   return (
@@ -156,7 +214,7 @@ const About = () => {
         <ProgressBar now={scrollProgress} variant="success" />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section with Enhanced Social Proof */}
       <motion.section
         id="hero"
         className="hero-section"
@@ -179,28 +237,41 @@ const About = () => {
           >
             {t('about.hero.subtitle')}
           </motion.p>
+
+          {/* Social Proof Stats */}
           <motion.div
-            className="hero-features"
+            className="social-proof-stats"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            {heroData.features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="feature-item"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {feature.icon}
-                <span>{feature.text}</span>
+            <div className="stats-grid">
+              <motion.div className="stat-item" whileHover={{ scale: 1.05 }}>
+                <FaUsers className="stat-icon" />
+                <h3>{socialProofData.totalStudents}</h3>
+                <p>{t('about.stats.students')}</p>
               </motion.div>
-            ))}
+              <motion.div className="stat-item" whileHover={{ scale: 1.05 }}>
+                <FaCheck className="stat-icon" />
+                <h3>{socialProofData.successRate}</h3>
+                <p>{t('about.stats.successRate')}</p>
+              </motion.div>
+              <motion.div className="stat-item" whileHover={{ scale: 1.05 }}>
+                <FaStar className="stat-icon" />
+                <h3>{socialProofData.avgRating}</h3>
+                <p>{t('about.stats.rating')}</p>
+              </motion.div>
+              <motion.div className="stat-item" whileHover={{ scale: 1.05 }}>
+                <FaGraduationCap className="stat-icon" />
+                <h3>{socialProofData.activeInstructors}</h3>
+                <p>{t('about.stats.instructors')}</p>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* History Section */}
+      {/* History Section with Commitment Device */}
       <motion.section
         id="history"
         className="history-section"
@@ -220,18 +291,29 @@ const About = () => {
               >
                 <h2>{t('about.history.title')}</h2>
                 <p>{t('about.history.description')}</p>
-                <div className="stats-grid">
-                  {historyStats.map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      className="stat-item"
+                
+                {/* Commitment Options */}
+                <div className="commitment-options">
+                  <h3>{t('about.commitment.title')}</h3>
+                  <p>{t('about.commitment.subtitle')}</p>
+                  <div className="commitment-buttons">
+                    <motion.button
+                      className="commitment-btn"
                       whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      onClick={() => handleCommitment('learn')}
                     >
-                      <h3>{stat.value}</h3>
-                      <p>{stat.label}</p>
-                    </motion.div>
-                  ))}
+                      <FaRegLightbulb />
+                      {t('about.commitment.learnMore')}
+                    </motion.button>
+                    <motion.button
+                      className="commitment-btn primary"
+                      whileHover={{ scale: 1.05 }}
+                      onClick={() => handleCommitment('start')}
+                    >
+                      <FaRegHandshake />
+                      {t('about.commitment.getStarted')}
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             </Col>
@@ -347,6 +429,50 @@ const About = () => {
           </>
         )}
       </Modal>
+
+      {/* Social Proof Notification */}
+      <AnimatePresence>
+        {showSocialProof && (
+          <motion.div 
+            className="social-proof-notification"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 50 }}
+          >
+            <div className="social-proof-content">
+              <FaThumbsUp className="social-proof-icon" />
+              <div className="social-proof-text">
+                <p className="social-proof-title">
+                  {recentSuccesses[activeTestimonial].name} - {recentSuccesses[activeTestimonial].achievement}
+                </p>
+                <p className="social-proof-message">
+                  "{recentSuccesses[activeTestimonial].quote}"
+                </p>
+                <p className="social-proof-date">
+                  {recentSuccesses[activeTestimonial].date}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Feedback Notification */}
+      <AnimatePresence>
+        {showFeedback && (
+          <motion.div 
+            className="feedback-notification"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+          >
+            <div className="feedback-content">
+              <FaThumbsUp className="feedback-icon" />
+              <p className="feedback-message">{feedbackMessage}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

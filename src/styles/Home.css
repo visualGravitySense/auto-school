@@ -111,6 +111,10 @@
   transition: transform 0.3s ease;
 }
 
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
 .stat-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -442,5 +446,372 @@
   .decision-progress {
     left: 1rem;
     width: calc(100% - 2rem);
+  }
+}
+
+/* Nudge Theory: Package Selection */
+.package-selection {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.package-selection h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.package-selection p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.package-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.package-option {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #e5e7eb;
+}
+
+.package-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.package-option.active {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.package-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #4f46e5;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.package-option h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.package-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 1.5rem;
+}
+
+.package-option ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.package-option ul li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+}
+
+.package-option ul li:before {
+  content: "✓";
+  color: #10b981;
+  font-weight: bold;
+}
+
+.package-select-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.package-select-btn:hover {
+  background: #4338ca;
+}
+
+/* Nudge Theory: Anchoring Effect */
+.anchoring-container {
+  background: #f3f4f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.anchoring-container h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.anchoring-container p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.anchoring-comparison {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.anchoring-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.anchoring-label {
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.anchoring-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.anchoring-savings {
+  font-size: 1rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+/* Nudge Theory: Commitment Device */
+.commitment-container {
+  background: #f3f4f6;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.commitment-container h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.commitment-container p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commitment-options {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.commitment-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.commitment-btn:hover {
+  background: #4f46e5;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Nudge Theory: Social Proof Notification */
+.social-proof-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  max-width: 300px;
+}
+
+.social-proof-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-proof-icon {
+  font-size: 1.5rem;
+  color: #4f46e5;
+}
+
+.social-proof-text {
+  flex: 1;
+}
+
+.social-proof-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.social-proof-message {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Nudge Theory: Feedback Notification */
+.feedback-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 100;
+  max-width: 300px;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feedback-icon {
+  font-size: 1.5rem;
+  color: #10b981;
+}
+
+.feedback-message {
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 3rem 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-progress {
+    width: calc(100% - 4rem);
+    left: 2rem;
+  }
+
+  .sticky-cta {
+    width: calc(100% - 4rem);
+  }
+  
+  .package-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .anchoring-comparison {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .commitment-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .commitment-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .section-indicator {
+    right: 1rem;
+  }
+  
+  .decision-progress {
+    left: 1rem;
+    width: calc(100% - 2rem);
+  }
+  
+  .social-proof-notification,
+  .feedback-notification {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
   }
 } 
