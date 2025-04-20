@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { DecisionContext } from '../contexts/DecisionContext';
 import { FaInfoCircle, FaCheck, FaTimes, FaQuestion, FaArrowRight, FaStar, FaClock, 
          FaGraduationCap, FaUsers, FaCar, FaCertificate, FaPhoneAlt, FaEnvelope, 
@@ -47,6 +47,22 @@ const Home = () => {
   const [feedbackMessage, setFeedbackMessage] = useState('');
   const [showAnchoring, setShowAnchoring] = useState(false);
   const [anchoringValue, setAnchoringValue] = useState(0);
+
+  // Animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   // Hero data optimized for System 1 & 2 integration
   const heroData = {
@@ -321,101 +337,127 @@ const Home = () => {
   return (
     <div className="home-page">
       {/* Global progress bar */}
-      <div 
+      <motion.div 
         className="global-progress-bar"
-        style={{ width: `${scrollProgress}%` }}
+        initial={{ width: 0 }}
+        animate={{ width: `${scrollProgress}%` }}
+        transition={{ duration: 0.3 }}
       />
       
       {/* Main content */}
       <main className="main-content">
         {/* SYSTEM 1: INTUITIVE, FAST, AUTOMATIC THINKING */}
         {/* This section uses visual cues, emotions, and familiar patterns to appeal to System 1 */}
-        <section
+        <motion.section
           id="hero"
-          className={`hero-section ${
-            activeSection === 'hero' ? 'opacity-100' : 'opacity-90'
-          }`}
+          className="hero-section"
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
         >
-          <HeroBlock {...heroData} />
+          <motion.div className="hero-content" variants={fadeInUp}>
+            <HeroBlock {...heroData} />
+          </motion.div>
           
           {/* Quick stats with visual cues for System 1 processing */}
-          <div className="stats-container">
+          <motion.div 
+            className="stats-container"
+            variants={fadeInUp}
+          >
             <div className="stats-grid">
               {stats.map((stat, index) => (
-                <div 
+                <motion.div 
                   key={index}
                   className="stat-card"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <div className="stat-icon">{stat.icon}</div>
                   <div className="stat-value">{stat.value}</div>
                   <div className="stat-label">{stat.label}</div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
           
           {/* Scroll indicator for System 1 guidance */}
-          {showScrollIndicator && (
-            <div className="scroll-indicator">
-              <p className="scroll-text">{t('home.scrollDown')}</p>
-              <div>
-                <FaChevronDown className="scroll-icon" />
-              </div>
-            </div>
-          )}
-        </section>
+          <AnimatePresence>
+            {showScrollIndicator && (
+              <motion.div 
+                className="scroll-indicator"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                <p className="scroll-text">{t('home.scrollDown')}</p>
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                  <FaChevronDown className="scroll-icon" />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.section>
 
         {/* SYSTEM 2: DELIBERATE, SLOW, LOGICAL THINKING */}
         {/* This section provides detailed information and requires conscious processing */}
-        <section
+        <motion.section
           id="consideration"
-          className={`consideration-section ${
-            activeSection === 'consideration' ? 'opacity-100' : 'opacity-90'
-          }`}
+          className="consideration-section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
         >
           <div className="section-container">
-            <div className="section-header">
+            <motion.div className="section-header" variants={fadeInUp}>
               <h2>{t('home.consideration.title')}</h2>
               <p>{t('home.consideration.subtitle')}</p>
-            </div>
+            </motion.div>
             
             <Advantages />
           </div>
-        </section>
+        </motion.section>
 
         {/* SYSTEM 1 & 2 INTEGRATION - Combining intuitive and deliberate thinking */}
-        <section
+        <motion.section
           id="evaluation"
-          className={`evaluation-section ${
-            activeSection === 'evaluation' ? 'opacity-100' : 'opacity-90'
-          }`}
+          className="evaluation-section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
         >
           <div className="section-container">
             {/* Social proof appeals to System 1 */}
-            <div className="social-proof-container">
+            <motion.div className="social-proof-container" variants={fadeInUp}>
               <SocialProof />
-            </div>
+            </motion.div>
             
             {/* Course structure appeals to System 2 */}
-            <div className="course-structure-container">
+            <motion.div className="course-structure-container" variants={fadeInUp}>
               <CourseStructure />
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* SYSTEM 2: DELIBERATE DECISION MAKING */}
         {/* This section requires careful consideration and comparison */}
-        <section
+        <motion.section
           id="decision"
-          className={`decision-section ${
-            activeSection === 'decision' ? 'opacity-100' : 'opacity-90'
-          }`}
+          className="decision-section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
         >
           <div className="section-container">
-            <div className="section-header">
+            <motion.div className="section-header" variants={fadeInUp}>
               <h2>{t('home.decision.title')}</h2>
               <p>{t('home.decision.subtitle')}</p>
-            </div>
+            </motion.div>
             
             {/* Nudge Theory: Default option highlighted */}
             <div className="package-selection">
@@ -498,27 +540,29 @@ const Home = () => {
             
             <TariffComparison />
             
-            <div className="gift-card-container">
+            <motion.div className="gift-card-container" variants={fadeInUp}>
               <h3>{t('home.giftCard.title')}</h3>
               <p>{t('home.giftCard.subtitle')}</p>
               <GiftCard />
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* SYSTEM 1 & 2 INTEGRATION - Final push with both emotional and logical appeals */}
-        <section
+        <motion.section
           id="action"
-          className={`action-section ${
-            activeSection === 'action' ? 'opacity-100' : 'opacity-90'
-          }`}
+          className="action-section"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
         >
           <div className="section-container">
             {/* Testimonials appeal to System 1 */}
-            <div className="section-header">
+            <motion.div className="section-header" variants={fadeInUp}>
               <h2>{t('home.testimonials.title')}</h2>
               <p>{t('home.testimonials.subtitle')}</p>
-            </div>
+            </motion.div>
             
             <Testimonials />
             
@@ -551,19 +595,20 @@ const Home = () => {
             )}
             
             {/* Clear CTA with both emotional and logical elements */}
-            <div className="cta-container">
+            <motion.div className="cta-container" variants={fadeInUp}>
               <h3>{t('home.cta.title')}</h3>
               <p>{t('home.cta.subtitle')}</p>
-              <a 
+              <motion.a 
                 href="/contact" 
                 className="cta-button"
-                onClick={() => updateDecisionConfidence(0.2)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 {t('home.cta.button')} <FaArrowRight className="cta-icon" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
       </main>
       
       {/* Footer */}
@@ -602,30 +647,40 @@ const Home = () => {
       {/* Fixed UI elements */}
       <div className="fixed-ui-elements">
         {/* Section indicator to show users where they are in the decision process */}
-        <div className="section-indicator">
+        <motion.div 
+          className="section-indicator"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5 }}
+        >
           <div className="indicator-dots">
             {['hero', 'consideration', 'evaluation', 'decision', 'action'].map((section) => (
-              <div 
+              <motion.div 
                 key={section}
-                className={`indicator-dot ${
-                  activeSection === section ? 'active' : ''
-                }`}
+                className={`indicator-dot ${activeSection === section ? 'active' : ''}`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => {
                   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
                 }}
               />
             ))}
           </div>
-        </div>
+        </motion.div>
         
         {/* Decision Progress Indicator */}
-        <div className="decision-progress">
+        <motion.div 
+          className="decision-progress"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+        >
           <div className="progress-bar">
-            <div
+            <motion.div
               className="progress-fill"
-              style={{ 
-                width: `${decisionState.decisionConfidence * 100}%` 
-              }}
+              initial={{ width: 0 }}
+              animate={{ width: `${decisionState.decisionConfidence * 100}%` }}
+              transition={{ duration: 0.5 }}
             />
           </div>
           <div className="progress-labels">
@@ -638,12 +693,17 @@ const Home = () => {
             <FaTimes className={decisionState.decisionConfidence >= 0.3 && decisionState.decisionConfidence < 0.7 ? 'active' : ''} />
             <FaCheck className={decisionState.decisionConfidence >= 0.7 ? 'active' : ''} />
           </div>
-        </div>
+        </motion.div>
         
         {/* Nudge Theory: Social proof notification */}
         <AnimatePresence>
           {showSocialProof && (
-            <div className="social-proof-notification">
+            <motion.div 
+              className="social-proof-notification"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+            >
               <div className="social-proof-content">
                 <FaUsers className="social-proof-icon" />
                 <div className="social-proof-text">
@@ -651,35 +711,46 @@ const Home = () => {
                   <p className="social-proof-message">{t('home.socialProof.message')}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </AnimatePresence>
         
         {/* Nudge Theory: Feedback notification */}
         <AnimatePresence>
           {showFeedback && (
-            <div className="feedback-notification">
+            <motion.div 
+              className="feedback-notification"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
               <div className="feedback-content">
                 <FaThumbsUp className="feedback-icon" />
                 <p className="feedback-message">{feedbackMessage}</p>
               </div>
-            </div>
+            </motion.div>
           )}
         </AnimatePresence>
         
         {/* SYSTEM 1: INTUITIVE ACCESS - Persistent CTA that follows the user */}
         <AnimatePresence>
           {showStickyCTA && (
-            <div className="sticky-cta">
-              <a 
+            <motion.div 
+              className="sticky-cta"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+            >
+              <motion.a 
                 href="/contact" 
                 className="sticky-cta-button"
-                onClick={() => updateDecisionConfidence(0.2)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span>{t('home.stickyCta.text')}</span>
                 <FaArrowRight className="sticky-cta-icon" />
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           )}
         </AnimatePresence>
       </div>
