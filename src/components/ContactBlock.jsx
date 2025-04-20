@@ -7,7 +7,7 @@ function ContactBlock() {
 
   return (
     <>
-        <div className="grid grid-cols-1  bg-gray-900 text-black p-8 rounded-2xl shadow-lg">
+        <div className="grid grid-cols-1  bg-white text-black p-8 rounded-2xl shadow-lg">
             <Row className="align-items-center">
         {/* Контактные данные */}
                 <Col md={6}>

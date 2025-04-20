@@ -1,4 +1,4 @@
-// src/components/Footer.jsx
+ // src/components/Footer.jsx
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Form, Button, Nav } from 'react-bootstrap';
 import { FaTelegramPlane, FaWhatsapp, FaFacebookF, FaMapMarkerAlt, FaPhone, FaEnvelope, FaArrowRight, FaChevronRight, FaInfoCircle } from 'react-icons/fa';
@@ -11,7 +11,7 @@ import PaymentsContactForm from './PaymentsContactForm';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); 
   const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -96,8 +96,8 @@ const Footer = () => {
 
       {/* Main content - System 1 & 2 integration */}
       <Container className="mb-8">
-        <Row className="mb-4">
-          <Col md={6}>
+          <Row className="mb-4">
+            <Col md={6}>
             {/* Contact form - System 2: Deliberate action */}
             <div className={`bg-gray-800 p-6 rounded-lg shadow-lg transition-all duration-300 ${
               formFocused ? 'ring-2 ring-blue-500' : ''
@@ -152,8 +152,8 @@ const Footer = () => {
                 </Button>
               </Form>
             </div>
-          </Col>
-          <Col md={6}>
+            </Col>
+            <Col md={6}>
             {/* Image - System 1: Visual appeal */}
             <div className="w-full h-64 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
               <img 
@@ -161,36 +161,36 @@ const Footer = () => {
                 alt="Education" 
                 className="w-full h-full object-cover" 
               />
-            </div>
-          </Col>
-        </Row>
-      </Container>
+                  </div>
+            </Col>
+          </Row>
+        </Container>
 
       {/* Info sections - System 2: Deliberate information processing */}
-      <Container>
-        <Row>
+        <Container>
+            <Row>
           {/* 1. Info about school - System 2 */}
           <Col md={4} className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <FaInfoCircle className="mr-2 text-blue-500" /> {t('footer.about')}
             </h3>
             <p className="text-gray-300">
-              {t('footer.story')}
-            </p>
+                {t('footer.story')}
+                </p>
             <button 
               className="mt-4 text-blue-400 hover:text-blue-300 flex items-center transition-colors"
               onClick={() => window.location.href = '/about'}
             >
               {t('footer.learnMore')} <FaChevronRight className="ml-1" />
             </button>
-          </Col>
+            </Col>
 
           {/* 2. Menu with links - System 1 & 2 integration */}
           <Col md={4} className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <FaMapMarkerAlt className="mr-2 text-blue-500" /> {t('footer.menu')}
             </h3>
-            <Nav className="flex-column">
+                <Nav className="flex-column">
               <Nav.Link 
                 href="/" 
                 className="text-gray-300 hover:text-white transition-colors flex items-center"
@@ -221,11 +221,11 @@ const Footer = () => {
               >
                 <FaChevronRight className="mr-2 text-blue-500" /> {t('navbar.contact')}
               </Nav.Link>
-            </Nav>
-          </Col>
+                </Nav>
+            </Col>
 
           {/* 3. Contacts - System 1: Quick access to contact information */}
-          <Col md={4}>
+            <Col md={4}>
             <h3 className="text-xl font-bold mb-4 flex items-center">
               <FaPhone className="mr-2 text-blue-500" /> {t('footer.contact')}
             </h3>
@@ -260,12 +260,12 @@ const Footer = () => {
                 </a>
               </p>
             </div>
-          </Col>
-        </Row>
+            </Col>
+            </Row>
 
         {/* Social media - System 1: Quick access to familiar platforms */}
         <Row className="mt-8">
-          <Col className="text-center">
+                <Col className="text-center">
             <h5 className="text-xl font-bold mb-4">{t('footer.social')}</h5>
             <div className="flex justify-center space-x-6">
               <a 
@@ -275,8 +275,8 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
                 aria-label="Facebook"
               >
-                <FaFacebookF size={30} />
-              </a>
+                        <FaFacebookF size={30} />
+                    </a>
               <a 
                 href="https://t.me/viktorijaschool" 
                 target="_blank" 
@@ -284,7 +284,7 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
                 aria-label="Telegram"
               >
-                <FaTelegramPlane size={30} />
+                        <FaTelegramPlane size={30} />
               </a>
               <a 
                 href="https://wa.me/37255555555" 
@@ -293,11 +293,11 @@ const Footer = () => {
                 className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
                 aria-label="WhatsApp"
               >
-                <FaWhatsapp size={30} />
+                        <FaWhatsapp size={30} />
               </a>
-            </div>
-          </Col>
-        </Row>
+                    </div>
+                </Col>
+            </Row>
 
         {/* Copyright - System 1: Visual recognition */}
         <Row className="mt-8 pt-4 border-t border-gray-800">
@@ -305,7 +305,7 @@ const Footer = () => {
             <p>© {new Date().getFullYear()} Viktorija Driving School. {t('footer.rights')}</p>
           </Col>
         </Row>
-      </Container>
+        </Container>
     </footer>
   );
 };
