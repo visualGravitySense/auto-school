@@ -250,30 +250,34 @@ const Home = () => {
 
   // Helper functions for calculating decision factors
   const calculatePriceFactor = () => {
-    const priceInteractions = userInteractions.filter(i => 
-      i.target.includes('price') || i.target.includes('cost')
-    ).length;
+    const priceInteractions = userInteractions.filter(i => {
+      const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+      return targetStr.includes('price') || targetStr.includes('cost');
+    }).length;
     return Math.min(priceInteractions / 10, 1);
   };
 
   const calculateQualityFactor = () => {
-    const qualityInteractions = userInteractions.filter(i => 
-      i.target.includes('quality') || i.target.includes('features')
-    ).length;
+    const qualityInteractions = userInteractions.filter(i => {
+      const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+      return targetStr.includes('quality') || targetStr.includes('features');
+    }).length;
     return Math.min(qualityInteractions / 8, 1);
   };
 
   const calculateConvenienceFactor = () => {
-    const convenienceInteractions = userInteractions.filter(i => 
-      i.target.includes('schedule') || i.target.includes('location')
-    ).length;
+    const convenienceInteractions = userInteractions.filter(i => {
+      const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+      return targetStr.includes('schedule') || targetStr.includes('location');
+    }).length;
     return Math.min(convenienceInteractions / 6, 1);
   };
 
   const calculateReputationFactor = () => {
-    const reputationInteractions = userInteractions.filter(i => 
-      i.target.includes('review') || i.target.includes('testimonial')
-    ).length;
+    const reputationInteractions = userInteractions.filter(i => {
+      const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+      return targetStr.includes('review') || targetStr.includes('testimonial');
+    }).length;
     return Math.min(reputationInteractions / 5, 1);
   };
 
@@ -292,22 +296,29 @@ const Home = () => {
   const calculateAlternativesConsidered = () => {
     const uniqueAlternatives = new Set(
       userInteractions
-        .filter(i => i.target.includes('package') || i.target.includes('plan'))
+        .filter(i => {
+          const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+          return targetStr.includes('package') || targetStr.includes('plan');
+        })
         .map(i => i.target)
     );
     return uniqueAlternatives.size;
   };
 
   const calculateComparisonsMade = () => {
-    return userInteractions.filter(i => 
-      i.target.includes('compare') || i.target.includes('versus')
-    ).length;
+    return userInteractions.filter(i => {
+      const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+      return targetStr.includes('compare') || targetStr.includes('versus');
+    }).length;
   };
 
   const calculateCriteriaEvaluated = () => {
     const criteria = ['price', 'quality', 'features', 'schedule', 'location'];
     return criteria.filter(criterion => 
-      userInteractions.some(i => i.target.includes(criterion))
+      userInteractions.some(i => {
+        const targetStr = typeof i.target === 'string' ? i.target : i.target.toString();
+        return targetStr.includes(criterion);
+      })
     ).length;
   };
   

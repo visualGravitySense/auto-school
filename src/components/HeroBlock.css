@@ -177,9 +177,9 @@
   .hero-block button, 
   .hero-block a {
     min-height: 48px;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
   }
 }
 

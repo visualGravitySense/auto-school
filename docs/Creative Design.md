@@ -2,6 +2,8 @@ I'll help you create a creative design concept for the homepage that aligns with
 
 **Design Concept: "Journey to Success"**
 
+**Promp**: "A high-quality image of a confident driving instructor teaching a student. Add subtle animated elements (like a road path or steering wheel) that respond to scroll. Include floating stat cards with glassmorphism effect showing key metrics."
+
 1. **Hero Section**
 - Create a dynamic split-screen layout:
   - Left side: A high-quality image of a confident driving instructor teaching a student
