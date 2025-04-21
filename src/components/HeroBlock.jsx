@@ -71,7 +71,7 @@ const HeroBlock = ({ buttonLink, imageUrl }) => {
     }
   ];
     
-  return (
+    return (
     <section 
       id="hero-section" 
       className={`hero-block transition-all duration-700 ${
@@ -79,7 +79,7 @@ const HeroBlock = ({ buttonLink, imageUrl }) => {
       }`}
     >
       <Container fluid className="px-0 px-md-4">
-        <Row className="align-items-center">
+          <Row className="align-items-center">
           <Col md={6} className="order-2 order-md-1">
             <div className="text-black min-h-[50vh] md:min-h-screen flex items-center justify-center relative overflow-hidden py-4 md:py-0">
               {/* Mobile decorative elements */}
@@ -88,7 +88,7 @@ const HeroBlock = ({ buttonLink, imageUrl }) => {
                   <div className="absolute top-2 right-2 z-10">
                     <div className="w-10 h-10 rounded-full bg-amber-600 border-2 border-amber-400 flex items-center justify-center">
                       <span className="text-xl font-black text-white">A</span>
-                    </div>
+                </div>
                   </div>
                   <div className="absolute bottom-2 left-2 z-10">
                     <div className="w-8 h-8 rounded-full bg-blue-400"></div>
@@ -138,26 +138,26 @@ const HeroBlock = ({ buttonLink, imageUrl }) => {
                         <h3 className="font-bold text-sm md:text-lg truncate">{feature.title}</h3>
                         <p className="text-gray-600 text-xs md:text-base line-clamp-2">{feature.description}</p>
                       </div>
-                    </div>
+                  </div>
                   ))}
                 </div>
                 
                 {/* CTA */}
                 <div className="mt-4 md:mt-8 flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
-                  <Button 
-                    onClick={() => setIsPopUpOpen(true)}
-                    variant="primary" 
+                <Button 
+                  onClick={() => setIsPopUpOpen(true)}
+                  variant="primary" 
                     className="hero-btn flex items-center justify-center"
                   >
                     {t('hero.buttonText')} <FaArrowRight className="ml-2" />
                   </Button>
                   <Button 
                     variant="outline-primary" 
-                    href={buttonLink} 
+                  href={buttonLink} 
                     className="hero-btn-outline flex items-center justify-center"
                   >
                     {t('hero.learnMore')} <FaCheck className="ml-2" />
-                  </Button>
+                </Button>
                 </div>
               </div>
             </div>
@@ -171,15 +171,15 @@ const HeroBlock = ({ buttonLink, imageUrl }) => {
                 className="w-full hero-image" 
               />
             </div>
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
 
-      <PopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
-        <ContactForm />
-      </PopUp>
-    </section>
-  );
-};
+        <PopUp isOpen={isPopUpOpen} onClose={() => setIsPopUpOpen(false)}>
+          <ContactForm />
+        </PopUp>
+      </section>
+    );
+  };
 
 export default HeroBlock;

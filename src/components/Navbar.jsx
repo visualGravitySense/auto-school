@@ -240,8 +240,8 @@ const Navbar = () => {
                         </button>
                       </div>
                     )}
-                  </div>
-                  
+        </div>
+
                   <div className="social-links">
                     <a
                       href="https://t.me/viktorijaschool"
@@ -272,8 +272,8 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
-      </nav>
+      </div>
+    </nav>
       {/* Overlay for mobile menu */}
       {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsOpen(false)} />}
     </>

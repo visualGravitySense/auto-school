@@ -119,7 +119,7 @@ const Contact = () => {
     setTimeout(() => setShowFeedback(false), 3000);
   };
 
-  return (
+    return (
     <div className="contact-page">
       {/* Hero Section - System 1: Initial Impression */}
       <motion.section 
@@ -327,18 +327,18 @@ const Contact = () => {
                     onProgressChange={handleFormProgress}
                   />
                 </motion.div>
-              </div>
-            </Col>
+            </div>
+          </Col>
 
-            <Col md={6}>
+          <Col md={6}>
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <ImageGrid />
+            <ImageGrid />
               </motion.div>
-            </Col>
+          </Col>
           </Row>
         </div>
       </motion.section>
@@ -430,7 +430,7 @@ const Contact = () => {
         </div>
       </motion.section>
     </div>
-  );
-};
-
-export default Contact;
+    );
+  };
+  
+  export default Contact;

@@ -52,7 +52,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 2rem;
+  /* padding: 2rem; */
   background: linear-gradient(135deg, rgba(26, 54, 93, 0.05) 0%, rgba(13, 148, 136, 0.05) 100%);
 }
 
@@ -65,14 +65,14 @@
 .hero-section h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #ffffff;
 }
 
 .hero-section p {
   font-size: 1.5rem;
   max-width: 600px;
   margin-bottom: 2rem;
-  color: #4a5568;
+  color: #ffffff;
 }
 
 .cta-button {

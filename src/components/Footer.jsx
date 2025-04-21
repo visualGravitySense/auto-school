@@ -303,8 +303,8 @@ const Footer = () => {
         <Row className="mt-8 pt-4 border-t border-gray-800">
           <Col className="text-center text-gray-400">
             <p>© {new Date().getFullYear()} Viktorija Driving School. {t('footer.rights')}</p>
-          </Col>
-        </Row>
+                </Col>
+            </Row>
         </Container>
     </footer>
   );

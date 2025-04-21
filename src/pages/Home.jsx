@@ -10,6 +10,7 @@ import '../styles/Home.css';
 
 // Import components
 import HeroBlock from '../components/HeroBlock';
+import HeroBlock2 from '../components/HeroBlock2';
 import GiftCard from '../components/GiftCard';
 import Advantages from '../components/Advantages';
 import TariffComparison from '../components/TariffComparison';
@@ -65,7 +66,7 @@ const Home = () => {
   };
 
   // Hero data optimized for System 1 & 2 integration
-  const heroData = {
+const heroData = {
     imageUrl: '/images/services.jpg',
     title: t('home.hero.title'),
     subtitle: t('home.hero.subtitle'),
@@ -345,7 +346,7 @@ const Home = () => {
     setTimeout(() => setShowFeedback(false), 3000);
   };
 
-  return (
+    return (
     <div className="home-page">
       {/* Global progress bar */}
       <motion.div 
@@ -367,7 +368,8 @@ const Home = () => {
           variants={staggerContainer}
         >
           <motion.div className="hero-content" variants={fadeInUp}>
-            <HeroBlock {...heroData} />
+            {/* <HeroBlock {...heroData} /> */}
+            <HeroBlock2 />
           </motion.div>
           
           {/* Quick stats with visual cues for System 1 processing */}
@@ -548,9 +550,9 @@ const Home = () => {
                 </div>
               </div>
             )}
-            
+
             <TariffComparison />
-            
+
             <motion.div className="gift-card-container" variants={fadeInUp}>
               <h3>{t('home.giftCard.title')}</h3>
               <p>{t('home.giftCard.subtitle')}</p>
@@ -766,8 +768,8 @@ const Home = () => {
         </AnimatePresence>
       </div>
     </div>
-  );
-};
-
-export default Home;
+    );
+  };
+  
+  export default Home;
   
