@@ -57,7 +57,7 @@ const pricingData = [
 ];
 
 const PricingTable = ({ onSelect }) => {
-    const { t } = useTranslation();
+  const { t } = useTranslation();
     const [hoveredCard, setHoveredCard] = useState(null);
     const [showTooltip, setShowTooltip] = useState(false);
     const [tooltipContent, setTooltipContent] = useState('');
@@ -81,7 +81,7 @@ const PricingTable = ({ onSelect }) => {
         }
     };
 
-    return (
+  return (
         <div className="pricing-table">
             <Row className="justify-content-center">
                 {pricingData.map((package_, index) => (

@@ -132,7 +132,7 @@ const TariffComparison = () => {
           className="comparison-container"
         >
           <Table responsive className="comparison-table">
-            <thead>
+          <thead>
               <tr>
                 <th className="feature-column">Features</th>
                 {comparisonData.packages.map((package_, index) => (
@@ -157,9 +157,9 @@ const TariffComparison = () => {
                     </div>
                   </motion.th>
                 ))}
-              </tr>
-            </thead>
-            <tbody>
+            </tr>
+          </thead>
+          <tbody>
               {comparisonData.features.map((feature, index) => (
                 <motion.tr 
                   key={feature.id}
@@ -184,7 +184,7 @@ const TariffComparison = () => {
                         <FaInfoCircle className="info-icon" />
                       </OverlayTrigger>
                     </div>
-                  </td>
+              </td>
                   {comparisonData.packages.map((package_) => (
                     <td 
                       key={`${feature.id}-${package_.id}`}
@@ -195,11 +195,11 @@ const TariffComparison = () => {
                       }}
                     >
                       {renderFeatureValue(package_.features[feature.id], package_.id)}
-                    </td>
+              </td>
                   ))}
                 </motion.tr>
               ))}
-            </tbody>
+          </tbody>
           </Table>
 
           {/* Feature information tooltip */}

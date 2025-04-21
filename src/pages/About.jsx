@@ -18,7 +18,7 @@ const heroData = {
         { icon: <FaAward />, text: 'Guaranteed Results' },
         { icon: <FaUsers />, text: 'Experienced Instructors' }
     ]
-};
+  };
 
 const historyData = {
     imageUrl: '/images/driving-school-history.jpg',

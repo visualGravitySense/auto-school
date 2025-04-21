@@ -15,7 +15,7 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
     package: 'standard'
   });
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [activeField, setActiveField] = useState(null);
   const [formProgress, setFormProgress] = useState(0);
@@ -124,9 +124,9 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
   const fieldVariants = {
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0 }
-  };
+    };
 
-  return (
+    return (
     <div className="contact-form-container">
       {submitSuccess ? (
         <motion.div
@@ -159,7 +159,7 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
                 transition={{ duration: 0.5 }}
               />
             </div>
-          </div>
+            </div>
 
           {/* Name field */}
           <motion.div
@@ -171,7 +171,7 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
             <Form.Group className="mb-3">
               <Form.Label>{t('contact.name')} *</Form.Label>
               <Form.Control
-                type="text"
+                    type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -208,7 +208,7 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
             <Form.Group className="mb-3">
               <Form.Label>{t('contact.email')} *</Form.Label>
               <Form.Control
-                type="email"
+                    type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -417,9 +417,9 @@ const PaymentsContactForm = ({ onFocusChange, onProgressChange }) => {
             </motion.div>
           )}
         </Form>
-      )}
-    </div>
-  );
+            )}
+        </div>
+    );
 };
 
 export default PaymentsContactForm;
